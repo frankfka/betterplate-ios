@@ -15,4 +15,8 @@ class RealmConfig {
         return Realm.Configuration(fileURL: Bundle.main.url(forResource: "BetterplateData", withExtension: "realm"), readOnly: true, objectTypes: [Food.self, Menu.self, Restaurant.self])
     }
     
+    static func userDataConfig() -> Realm.Configuration {
+        return Realm.Configuration(objectTypes: [CurrentMeal.self, FavoriteRestaurants.self])
+    }
+    
 }

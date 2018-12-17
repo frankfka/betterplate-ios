@@ -9,11 +9,10 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
         // Do any additional setup after loading the view, typically from a nib.
     }
 
