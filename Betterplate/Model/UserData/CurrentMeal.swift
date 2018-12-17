@@ -10,5 +10,11 @@ import Foundation
 import RealmSwift
 
 class CurrentMeal: Object {
+    @objc dynamic var mealId: Int = 0
     let mealFoodIds: [Int] = []
+    
+    override static func primaryKey() -> String? {
+        return "mealId"
+    }
+    
 }

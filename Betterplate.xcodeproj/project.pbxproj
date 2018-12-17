@@ -16,7 +16,6 @@
 		113E6E7021C622F0008FC324 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E6E6F21C622F0008FC324 /* Menu.swift */; };
 		113E6E7221C62333008FC324 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E6E7121C62333008FC324 /* Restaurant.swift */; };
 		113E6E7521C62584008FC324 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E6E7421C62584008FC324 /* RealmConfig.swift */; };
-		113E6E7721C6283B008FC324 /* BetterplateData.realm in Resources */ = {isa = PBXBuildFile; fileRef = 113E6E7621C6283B008FC324 /* BetterplateData.realm */; };
 		1152C56521C74172004A0205 /* AllRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C56421C74172004A0205 /* AllRestaurantsViewController.swift */; };
 		1152C56721C7418A004A0205 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C56621C7418A004A0205 /* MealViewController.swift */; };
 		1152C56B21C74EB9004A0205 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C56A21C74EB9004A0205 /* MenusViewController.swift */; };
@@ -25,6 +24,7 @@
 		1152C57221C757AE004A0205 /* CurrentMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57121C757AE004A0205 /* CurrentMeal.swift */; };
 		1152C57421C7597E004A0205 /* FavoriteRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57321C7597E004A0205 /* FavoriteRestaurants.swift */; };
 		1152C57821C759CF004A0205 /* CurrentMealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57721C759CF004A0205 /* CurrentMealService.swift */; };
+		1152C57A21C77A40004A0205 /* BetterplateData.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1152C57921C77A40004A0205 /* BetterplateData.realm */; };
 		D12C278DFB9C5177C86682B1 /* Pods_Betterplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,6 @@
 		113E6E6F21C622F0008FC324 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		113E6E7121C62333008FC324 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		113E6E7421C62584008FC324 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
-		113E6E7621C6283B008FC324 /* BetterplateData.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = BetterplateData.realm; sourceTree = "<group>"; };
 		1152C56421C74172004A0205 /* AllRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRestaurantsViewController.swift; sourceTree = "<group>"; };
 		1152C56621C7418A004A0205 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		1152C56A21C74EB9004A0205 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		1152C57121C757AE004A0205 /* CurrentMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMeal.swift; sourceTree = "<group>"; };
 		1152C57321C7597E004A0205 /* FavoriteRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurants.swift; sourceTree = "<group>"; };
 		1152C57721C759CF004A0205 /* CurrentMealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMealService.swift; sourceTree = "<group>"; };
+		1152C57921C77A40004A0205 /* BetterplateData.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = BetterplateData.realm; sourceTree = "<group>"; };
 		38899149A628C256E3C20E72 /* Pods-Betterplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.release.xcconfig"; sourceTree = "<group>"; };
 		C33BB3E657F308BA068FE214 /* Pods-Betterplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +136,7 @@
 		1152C56921C74AA6004A0205 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				113E6E7621C6283B008FC324 /* BetterplateData.realm */,
+				1152C57921C77A40004A0205 /* BetterplateData.realm */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 			files = (
 				113E6E6621C62096008FC324 /* LaunchScreen.storyboard in Resources */,
 				113E6E6321C62096008FC324 /* Assets.xcassets in Resources */,
-				113E6E7721C6283B008FC324 /* BetterplateData.realm in Resources */,
+				1152C57A21C77A40004A0205 /* BetterplateData.realm in Resources */,
 				113E6E6121C62095008FC324 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,6 @@ import RealmSwift
 class FoodDetailViewController: UIViewController {
     
     let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
-    let userRealm = try! Realm(configuration: RealmConfig.userDataConfig())
     var foodId:Int?
     var food:Food?
     
@@ -24,6 +23,7 @@ class FoodDetailViewController: UIViewController {
         // Do some checking?
         food = realm.objects(Food.self).filter("foodId == \(foodId!)")[0]
         foodNameLabel.text = food?.foodName
+        CurrentMealService().getCurrentMealList()
     }
     
     

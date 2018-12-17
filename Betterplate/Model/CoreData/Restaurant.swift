@@ -18,4 +18,8 @@ class Restaurant: Object {
     @objc dynamic var minCalories: Double = 0
     @objc dynamic var maxCalories: Double = 0
     @objc dynamic var isFeatured: Int = 0
+    
+    override static func primaryKey() -> String? {
+        return "restaurantId"
+    }
 }

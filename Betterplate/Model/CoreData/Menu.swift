@@ -13,4 +13,8 @@ class Menu: Object {
     @objc dynamic var menuId: Int = 0
     @objc dynamic var menuName: String = ""
     @objc dynamic var restaurantId: Int = 0
+    
+    override static func primaryKey() -> String? {
+        return "menuId"
+    }
 }
