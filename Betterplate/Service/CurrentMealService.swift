@@ -14,29 +14,33 @@ class CurrentMealService {
     let userRealm = try! Realm(configuration: RealmConfig.userDataConfig())
     
     func removeFoodFromMeal(food: Food) {
-        
+        let matchingFoods = getCurrentMealList().filter("foodId == \(food.foodId)")
+        if matchingFoods.count > 0 {
+            do {
+                try userRealm.write {
+                    userRealm.delete(matchingFoods[0])
+                }
+            } catch {
+                print("Could not remove item from meal \(error)")
+            }
+        }
     }
     
     func addFoodToMeal(food: Food) {
-        
+        let newMealItem = CurrentMealItem()
+        newMealItem.foodId = food.foodId
+        do {
+            try userRealm.write {
+                userRealm.add(newMealItem)
+            }
+        } catch {
+            print("Could not add item to meal \(error)")
+        }
     }
     
     // Returns list of food ID's, if none currently exists in realm, will populate one automatically
-    func getCurrentMealList() {
-        let mealObjectResult = userRealm.objects(CurrentMeal.self)
-        if mealObjectResult.count > 0 {
-            print("in here")
-        } else {
-            print("No meal object exists, initializing empty meal")
-            do {
-                try userRealm.write {
-                    userRealm.add(CurrentMeal())
-                }
-            } catch {
-                print("Error creating a meal object: \(error)")
-            }
-        }
-        
+    func getCurrentMealList() -> Results<CurrentMealItem> {
+        return userRealm.objects(CurrentMealItem.self)
     }
     
 }

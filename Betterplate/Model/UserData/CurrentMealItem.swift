@@ -1,5 +1,5 @@
 //
-//  FavoriteRestaurants.swift
+//  CurrentMeal.swift
 //  Betterplate
 //
 //  Created by Frank Jia on 2018-12-16.
@@ -9,6 +9,6 @@
 import Foundation
 import RealmSwift
 
-class FavoriteRestaurant: Object {
-    @objc dynamic var restaurantId: Int = 0
+class CurrentMealItem: Object {
+    @objc dynamic var foodId: Int = 0
 }

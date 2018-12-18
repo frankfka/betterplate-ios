@@ -19,7 +19,7 @@ class RealmConfig {
     }
     
     static func userDataConfig() -> Realm.Configuration {
-        return Realm.Configuration(objectTypes: [CurrentMeal.self, FavoriteRestaurants.self])
+        return Realm.Configuration(objectTypes: [CurrentMealItem.self, FavoriteRestaurant.self])
     }
     
 }

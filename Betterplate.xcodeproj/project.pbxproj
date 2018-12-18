@@ -21,10 +21,10 @@
 		1152C56B21C74EB9004A0205 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C56A21C74EB9004A0205 /* MenusViewController.swift */; };
 		1152C56D21C7515E004A0205 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C56C21C7515E004A0205 /* FoodsViewController.swift */; };
 		1152C56F21C75333004A0205 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C56E21C75333004A0205 /* FoodDetailViewController.swift */; };
-		1152C57221C757AE004A0205 /* CurrentMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57121C757AE004A0205 /* CurrentMeal.swift */; };
-		1152C57421C7597E004A0205 /* FavoriteRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57321C7597E004A0205 /* FavoriteRestaurants.swift */; };
+		1152C57221C757AE004A0205 /* CurrentMealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57121C757AE004A0205 /* CurrentMealItem.swift */; };
 		1152C57821C759CF004A0205 /* CurrentMealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57721C759CF004A0205 /* CurrentMealService.swift */; };
 		1152C57A21C77A40004A0205 /* BetterplateData.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1152C57921C77A40004A0205 /* BetterplateData.realm */; };
+		11AEBC2121C8CB90003613CE /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */; };
 		D12C278DFB9C5177C86682B1 /* Pods_Betterplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,10 +45,10 @@
 		1152C56A21C74EB9004A0205 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
 		1152C56C21C7515E004A0205 /* FoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
 		1152C56E21C75333004A0205 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
-		1152C57121C757AE004A0205 /* CurrentMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMeal.swift; sourceTree = "<group>"; };
-		1152C57321C7597E004A0205 /* FavoriteRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurants.swift; sourceTree = "<group>"; };
+		1152C57121C757AE004A0205 /* CurrentMealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMealItem.swift; sourceTree = "<group>"; };
 		1152C57721C759CF004A0205 /* CurrentMealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMealService.swift; sourceTree = "<group>"; };
 		1152C57921C77A40004A0205 /* BetterplateData.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = BetterplateData.realm; sourceTree = "<group>"; };
+		11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		38899149A628C256E3C20E72 /* Pods-Betterplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.release.xcconfig"; sourceTree = "<group>"; };
 		C33BB3E657F308BA068FE214 /* Pods-Betterplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,8 +144,8 @@
 		1152C57021C75710004A0205 /* UserData */ = {
 			isa = PBXGroup;
 			children = (
-				1152C57121C757AE004A0205 /* CurrentMeal.swift */,
-				1152C57321C7597E004A0205 /* FavoriteRestaurants.swift */,
+				1152C57121C757AE004A0205 /* CurrentMealItem.swift */,
+				11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */,
 			);
 			path = UserData;
 			sourceTree = "<group>";
@@ -301,14 +301,14 @@
 				113E6E7221C62333008FC324 /* Restaurant.swift in Sources */,
 				1152C56721C7418A004A0205 /* MealViewController.swift in Sources */,
 				1152C56F21C75333004A0205 /* FoodDetailViewController.swift in Sources */,
-				1152C57421C7597E004A0205 /* FavoriteRestaurants.swift in Sources */,
 				113E6E5E21C62095008FC324 /* HomeViewController.swift in Sources */,
 				113E6E5C21C62095008FC324 /* AppDelegate.swift in Sources */,
 				1152C56521C74172004A0205 /* AllRestaurantsViewController.swift in Sources */,
-				1152C57221C757AE004A0205 /* CurrentMeal.swift in Sources */,
+				1152C57221C757AE004A0205 /* CurrentMealItem.swift in Sources */,
 				1152C56B21C74EB9004A0205 /* MenusViewController.swift in Sources */,
 				1152C56D21C7515E004A0205 /* FoodsViewController.swift in Sources */,
 				1152C57821C759CF004A0205 /* CurrentMealService.swift in Sources */,
+				11AEBC2121C8CB90003613CE /* FavoriteRestaurant.swift in Sources */,
 				113E6E7021C622F0008FC324 /* Menu.swift in Sources */,
 				113E6E6E21C62178008FC324 /* Food.swift in Sources */,
 				113E6E7521C62584008FC324 /* RealmConfig.swift in Sources */,

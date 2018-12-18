@@ -23,7 +23,6 @@ class FoodDetailViewController: UIViewController {
         // Do some checking?
         food = realm.objects(Food.self).filter("foodId == \(foodId!)")[0]
         foodNameLabel.text = food?.foodName
-        CurrentMealService().getCurrentMealList()
     }
     
     

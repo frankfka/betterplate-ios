@@ -1,8 +1,8 @@
 //
-//  FavoriteRestaurants.swift
+//  FavoriteRestaurant.swift
 //  Betterplate
 //
-//  Created by Frank Jia on 2018-12-16.
+//  Created by Frank Jia on 2018-12-17.
 //  Copyright © 2018 Frank Jia. All rights reserved.
 //
 
