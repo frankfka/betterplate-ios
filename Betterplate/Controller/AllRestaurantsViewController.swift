@@ -17,6 +17,7 @@ class AllRestaurantsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllRestaurants()
+        tableView.register(UINib(nibName: "RestaurantCell", bundle: nil), forCellReuseIdentifier: "restaurantCell")
         // Do any additional setup after loading the view.
     }
 
@@ -31,8 +32,11 @@ class AllRestaurantsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath)
-        cell.textLabel?.text = restaurants?[indexPath.row].restaurantName ?? "No Restaurants Available"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! RestaurantCell
+        if let restaurant = restaurants?[indexPath.row] {
+            cell.restaurantNameLabel.text = restaurant.restaurantName
+            cell.restaurantImage.image = UIImage(named: restaurant.imageKey)
+        }
         return cell
     }
     

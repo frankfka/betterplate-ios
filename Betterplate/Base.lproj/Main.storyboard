@@ -17,33 +17,93 @@
                     <view key="view" contentMode="scaleToFill" id="6EZ-ug-Ys7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ili-Gq-AoC">
+                                <rect key="frame" x="0.0" y="163.5" width="375" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="LeQ-Dd-omg"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mealItemCell" id="diG-ES-9IA">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="diG-ES-9IA" id="Mj8-9y-TiG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ili-Gq-AoC" firstAttribute="trailing" secondItem="wNW-eo-ni9" secondAttribute="trailing" id="00j-pr-aUy"/>
+                            <constraint firstItem="ili-Gq-AoC" firstAttribute="centerY" secondItem="6EZ-ug-Ys7" secondAttribute="centerY" id="UzX-4Z-3qf"/>
+                            <constraint firstItem="ili-Gq-AoC" firstAttribute="leading" secondItem="wNW-eo-ni9" secondAttribute="leading" id="srU-f8-Gmk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wNW-eo-ni9"/>
                     </view>
                     <navigationItem key="navigationItem" id="bOQ-Kb-1gq"/>
+                    <connections>
+                        <outlet property="tableView" destination="ili-Gq-AoC" id="rg3-9H-01m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojE-kS-7O5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="986"/>
+            <point key="canvasLocation" x="69.599999999999994" y="985.45727136431788"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UTh-6z-VFU">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gvm-kD-LAA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZEf-jO-eXY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3il-ud-v2w">
+                                <rect key="frame" x="0.0" y="64" width="375" height="687"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-6x-3nF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="EfJ-6W-kbD"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2fa-6x-3nF" firstAttribute="leading" secondItem="3il-ud-v2w" secondAttribute="leading" id="5ca-Je-BE2"/>
+                                    <constraint firstItem="2fa-6x-3nF" firstAttribute="centerX" secondItem="3il-ud-v2w" secondAttribute="centerX" id="RYd-LY-RXJ"/>
+                                    <constraint firstItem="2fa-6x-3nF" firstAttribute="top" secondItem="3il-ud-v2w" secondAttribute="top" id="oAH-RH-3Lx"/>
+                                    <constraint firstAttribute="trailing" secondItem="2fa-6x-3nF" secondAttribute="trailing" id="rU4-wS-eL9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3il-ud-v2w" firstAttribute="leading" secondItem="xee-Fk-JfU" secondAttribute="leading" id="Cpf-Yb-jx5"/>
+                            <constraint firstItem="xee-Fk-JfU" firstAttribute="trailing" secondItem="3il-ud-v2w" secondAttribute="trailing" id="Ef6-46-hhc"/>
+                            <constraint firstItem="xee-Fk-JfU" firstAttribute="bottom" secondItem="3il-ud-v2w" secondAttribute="bottom" id="dy4-uz-Iro"/>
+                            <constraint firstItem="3il-ud-v2w" firstAttribute="top" secondItem="xee-Fk-JfU" secondAttribute="top" id="xTL-tq-WbY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xee-Fk-JfU"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYu-gk-7I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-530.73463268365822"/>
         </scene>
         <!--All Restaurants View Controller-->
         <scene sceneID="k32-np-U4B">
             <objects>
                 <tableViewController id="lA6-lT-Fbe" customClass="AllRestaurantsViewController" customModule="Betterplate" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ldx-Sn-LRq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ldx-Sn-LRq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" id="NDT-gc-YEB">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NDT-gc-YEB" id="ut5-1H-eoT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="lA6-lT-Fbe" id="yEJ-iJ-gm0"/>
                             <outlet property="delegate" destination="lA6-lT-Fbe" id="P2u-Xr-knA"/>
@@ -52,6 +112,7 @@
                     <navigationItem key="navigationItem" id="6Ip-U2-oVU"/>
                     <connections>
                         <segue destination="JpR-tB-9ew" kind="show" identifier="restaurantToMenuSegue" id="DbL-oZ-igQ"/>
+                        <segue destination="gvm-kD-LAA" kind="show" id="ke7-MG-VOk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uR-le-J13" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,10 +206,12 @@
                     <navigationItem key="navigationItem" id="xNy-e3-VXI">
                         <barButtonItem key="rightBarButtonItem" title="Add to Meal" id="n3C-gK-Dyo">
                             <color key="tintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="hEJ-5B-CRU" id="9bR-f6-Dwy"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addToMealButton" destination="n3C-gK-Dyo" id="3DF-Bs-oY3"/>
                         <outlet property="foodNameLabel" destination="KdS-fE-5dg" id="Ecu-ka-yFK"/>
                     </connections>
                 </viewController>

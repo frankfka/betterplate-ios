@@ -7,5 +7,6 @@ target 'Betterplate' do
 
   # Pods for Betterplate
     pod 'RealmSwift'
+    pod 'SVProgressHUD'
 
 end

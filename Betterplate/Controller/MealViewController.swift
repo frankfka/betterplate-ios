@@ -8,23 +8,34 @@
 
 import UIKit
 
-class MealViewController: UIViewController {
+class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var itemsInMeal: [Food] = []
+    let mealService = CurrentMealService()
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        itemsInMeal = mealService.getFoodsInMeal()
+        tableView.reloadData()
     }
-    */
-
+    
+    //MARK: - Tableview methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemsInMeal.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mealItemCell")!
+        cell.textLabel?.text = itemsInMeal[indexPath.row].foodName
+        return cell
+    }
+    
 }

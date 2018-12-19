@@ -14,15 +14,25 @@ class FoodDetailViewController: UIViewController {
     let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
     var foodId:Int?
     var food:Food?
+    let mealService = CurrentMealService()
     
     @IBOutlet weak var foodNameLabel: UILabel!
-    @IBOutlet weak var addToMealButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do some checking?
-        food = realm.objects(Food.self).filter("foodId == \(foodId!)")[0]
-        foodNameLabel.text = food?.foodName
+        if let currentFoodId = foodId {
+            food = realm.objects(Food.self).filter("foodId == \(currentFoodId)")[0]
+            foodNameLabel.text = food?.foodName
+        } else {
+            // Show some error?
+        }
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        if let currentFood = food {
+            mealService.addFoodToMeal(food: currentFood)
+        }
+        // Present an alert?
     }
     
     

@@ -24,6 +24,8 @@
 		1152C57221C757AE004A0205 /* CurrentMealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57121C757AE004A0205 /* CurrentMealItem.swift */; };
 		1152C57821C759CF004A0205 /* CurrentMealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152C57721C759CF004A0205 /* CurrentMealService.swift */; };
 		1152C57A21C77A40004A0205 /* BetterplateData.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1152C57921C77A40004A0205 /* BetterplateData.realm */; };
+		118E1C5B21CA016900B74C95 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118E1C5A21CA016900B74C95 /* RestaurantCell.xib */; };
+		118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */; };
 		11AEBC2121C8CB90003613CE /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */; };
 		D12C278DFB9C5177C86682B1 /* Pods_Betterplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		1152C57121C757AE004A0205 /* CurrentMealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMealItem.swift; sourceTree = "<group>"; };
 		1152C57721C759CF004A0205 /* CurrentMealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMealService.swift; sourceTree = "<group>"; };
 		1152C57921C77A40004A0205 /* BetterplateData.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = BetterplateData.realm; sourceTree = "<group>"; };
+		118E1C5A21CA016900B74C95 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		38899149A628C256E3C20E72 /* Pods-Betterplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.release.xcconfig"; sourceTree = "<group>"; };
 		C33BB3E657F308BA068FE214 /* Pods-Betterplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		113E6E5A21C62095008FC324 /* Betterplate */ = {
 			isa = PBXGroup;
 			children = (
+				118E1C5C21CA018E00B74C95 /* View */,
 				1152C57621C759B4004A0205 /* Service */,
 				113E6E7321C623CC008FC324 /* Model */,
 				1152C56921C74AA6004A0205 /* Supporting Files */,
@@ -156,6 +161,15 @@
 				1152C57721C759CF004A0205 /* CurrentMealService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		118E1C5C21CA018E00B74C95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				118E1C5A21CA016900B74C95 /* RestaurantCell.xib */,
+				118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7ECB14FF98298A43109963A8 /* Pods */ = {
@@ -236,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				113E6E6621C62096008FC324 /* LaunchScreen.storyboard in Resources */,
+				118E1C5B21CA016900B74C95 /* RestaurantCell.xib in Resources */,
 				113E6E6321C62096008FC324 /* Assets.xcassets in Resources */,
 				1152C57A21C77A40004A0205 /* BetterplateData.realm in Resources */,
 				113E6E6121C62095008FC324 /* Main.storyboard in Resources */,
@@ -278,6 +293,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -285,6 +301,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -298,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */,
 				113E6E7221C62333008FC324 /* Restaurant.swift in Sources */,
 				1152C56721C7418A004A0205 /* MealViewController.swift in Sources */,
 				1152C56F21C75333004A0205 /* FoodDetailViewController.swift in Sources */,

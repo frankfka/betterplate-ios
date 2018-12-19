@@ -4,19 +4,23 @@ PODS:
   - Realm/Headers (3.12.0)
   - RealmSwift (3.12.0):
     - Realm (= 3.12.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - RealmSwift
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Realm
     - RealmSwift
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 10bce9d1419937ac6300b3b91f22ae8b74f6f57c
+PODFILE CHECKSUM: 1de894d1aa50a6f22e0e740721f30c2eec42928b
 
 COCOAPODS: 1.5.3
