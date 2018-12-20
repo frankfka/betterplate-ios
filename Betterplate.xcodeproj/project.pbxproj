@@ -28,7 +28,6 @@
 		1152DFDF21CB527F00963088 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1152DFDD21CB527F00963088 /* MenuCell.xib */; };
 		1152DFE121CB54FD00963088 /* FavoriteRestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DFE021CB54FD00963088 /* FavoriteRestaurantService.swift */; };
 		1152DFE321CBEF4E00963088 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DFE221CBEF4E00963088 /* RestaurantService.swift */; };
-		1152DFE521CBFA6500963088 /* FitContentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DFE421CBFA6500963088 /* FitContentTableView.swift */; };
 		1172F21321CB339E00F3240A /* RestaurantOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172F21221CB339E00F3240A /* RestaurantOverviewViewController.swift */; };
 		1172F21521CB469D00F3240A /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172F21421CB469D00F3240A /* FoodCell.swift */; };
 		1172F21721CB46B600F3240A /* FoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1172F21621CB46B600F3240A /* FoodCell.xib */; };
@@ -62,7 +61,6 @@
 		1152DFDD21CB527F00963088 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		1152DFE021CB54FD00963088 /* FavoriteRestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurantService.swift; sourceTree = "<group>"; };
 		1152DFE221CBEF4E00963088 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
-		1152DFE421CBFA6500963088 /* FitContentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitContentTableView.swift; sourceTree = "<group>"; };
 		1172F21221CB339E00F3240A /* RestaurantOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOverviewViewController.swift; sourceTree = "<group>"; };
 		1172F21421CB469D00F3240A /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		1172F21621CB46B600F3240A /* FoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCell.xib; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				1172F21621CB46B600F3240A /* FoodCell.xib */,
 				1152DFDC21CB527F00963088 /* MenuCell.swift */,
 				1152DFDD21CB527F00963088 /* MenuCell.xib */,
-				1152DFE421CBFA6500963088 /* FitContentTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,7 +340,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1152DFE521CBFA6500963088 /* FitContentTableView.swift in Sources */,
 				1152DFE121CB54FD00963088 /* FavoriteRestaurantService.swift in Sources */,
 				1172F21321CB339E00F3240A /* RestaurantOverviewViewController.swift in Sources */,
 				118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */,

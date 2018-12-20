@@ -16,9 +16,10 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
     var restaurant: Restaurant?
     var healthierPicks: [Food]?
     @IBOutlet weak var headerImage: UIImageView!
-    @IBOutlet weak var healthierPicksTable: FitContentTableView!
+    @IBOutlet weak var healthierPicksTable: UITableView!
     @IBOutlet weak var restaurantTitle: UILabel!
     @IBOutlet weak var isFavoritedBarButton: UIBarButtonItem!
+    @IBOutlet weak var healthierPicksTableHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,20 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             healthierPicks = RestaurantService().getHealthierPicks(for: restaurant!)
             healthierPicksTable.register(UINib(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "foodCell")
             healthierPicksTable.rowHeight = UITableView.automaticDimension
-            healthierPicksTable.estimatedRowHeight = 60
-            
+            healthierPicksTable.estimatedRowHeight = 80
+            healthierPicksTableHeightConstraint.constant = 1000
+            UIView.animate(withDuration: 0, animations: {
+                self.healthierPicksTable.layoutIfNeeded()
+            }) { (complete) in
+                var heightOfTableView: CGFloat = 0.0
+                // Get visible cells and sum up their heights
+                let cells = self.healthierPicksTable.visibleCells
+                for cell in cells {
+                    heightOfTableView += cell.frame.height
+                }
+                // Edit heightOfTableViewConstraint's constant to update height of table view
+                self.healthierPicksTableHeightConstraint.constant = heightOfTableView
+            }
         }
     }
     

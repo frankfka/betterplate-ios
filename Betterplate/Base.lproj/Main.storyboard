@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3il-ud-v2w">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3il-ud-v2w">
                                 <rect key="frame" x="0.0" y="64" width="375" height="687"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-6x-3nF">
@@ -81,59 +81,48 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYz-T7-C2G">
-                                        <rect key="frame" x="16" y="237" width="343" height="270"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthier Picks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUT-1Z-jk4">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdA-2y-Fzk">
-                                                <rect key="frame" x="125.5" y="236" width="92" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                                <state key="normal" title="View Menu">
-                                                    <color key="titleColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="viewMenuButtonPressed:" destination="gvm-kD-LAA" eventType="touchUpInside" id="UuH-Uc-3Tk"/>
-                                                </connections>
-                                            </button>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ULS-aO-HGO" customClass="FitContentTableView" customModule="Betterplate" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="34" width="343" height="194"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="194" id="ddY-cG-dMI"/>
-                                                </constraints>
-                                            </tableView>
-                                        </subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthier Picks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9q-Bp-jfx">
+                                        <rect key="frame" x="16" y="237" width="343" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3g-IM-hN5">
+                                        <rect key="frame" x="141.5" y="473" width="92" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="View Menu">
+                                            <color key="titleColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewMenuButtonPressed:" destination="gvm-kD-LAA" eventType="touchUpInside" id="YUP-9w-dgY"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-gp-i5o">
+                                        <rect key="frame" x="16" y="271" width="343" height="194"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="IUT-1Z-jk4" firstAttribute="leading" secondItem="ULS-aO-HGO" secondAttribute="leading" id="900-NA-vnw"/>
-                                            <constraint firstItem="mdA-2y-Fzk" firstAttribute="top" secondItem="ULS-aO-HGO" secondAttribute="bottom" constant="8" symbolic="YES" id="F0k-y9-H6n"/>
-                                            <constraint firstAttribute="trailing" secondItem="IUT-1Z-jk4" secondAttribute="trailing" id="LAJ-LK-gh2"/>
-                                            <constraint firstItem="ULS-aO-HGO" firstAttribute="centerX" secondItem="mdA-2y-Fzk" secondAttribute="centerX" id="Ltg-pL-fiA"/>
-                                            <constraint firstAttribute="bottom" secondItem="mdA-2y-Fzk" secondAttribute="bottom" id="UdW-hi-eoR"/>
-                                            <constraint firstItem="ULS-aO-HGO" firstAttribute="top" secondItem="IUT-1Z-jk4" secondAttribute="bottom" constant="8" symbolic="YES" id="VFj-fS-D2H"/>
-                                            <constraint firstItem="IUT-1Z-jk4" firstAttribute="trailing" secondItem="ULS-aO-HGO" secondAttribute="trailing" id="VOX-bM-8s5"/>
-                                            <constraint firstItem="IUT-1Z-jk4" firstAttribute="top" secondItem="cYz-T7-C2G" secondAttribute="top" id="b26-tj-WQe"/>
-                                            <constraint firstItem="IUT-1Z-jk4" firstAttribute="leading" secondItem="cYz-T7-C2G" secondAttribute="leading" id="rR3-7l-isE"/>
+                                            <constraint firstAttribute="height" constant="194" id="PDI-j3-rdq"/>
                                         </constraints>
-                                    </view>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="RfB-gp-i5o" firstAttribute="top" secondItem="s9q-Bp-jfx" secondAttribute="bottom" constant="8" symbolic="YES" id="00d-I1-Gdy"/>
                                     <constraint firstItem="2fa-6x-3nF" firstAttribute="leading" secondItem="3il-ud-v2w" secondAttribute="leading" id="5ca-Je-BE2"/>
+                                    <constraint firstItem="s9q-Bp-jfx" firstAttribute="leading" secondItem="BJo-qv-KnP" secondAttribute="leading" id="CeU-4E-Ovg"/>
+                                    <constraint firstItem="RfB-gp-i5o" firstAttribute="centerX" secondItem="U3g-IM-hN5" secondAttribute="centerX" id="Ezd-Zt-VO8"/>
                                     <constraint firstItem="BJo-qv-KnP" firstAttribute="leading" secondItem="3il-ud-v2w" secondAttribute="leading" constant="16" id="HSe-mO-WHE"/>
-                                    <constraint firstAttribute="trailing" secondItem="cYz-T7-C2G" secondAttribute="trailing" constant="16" id="KhZ-kJ-QGT"/>
-                                    <constraint firstItem="cYz-T7-C2G" firstAttribute="top" secondItem="BJo-qv-KnP" secondAttribute="bottom" constant="16" id="Mye-xy-C1j"/>
+                                    <constraint firstItem="s9q-Bp-jfx" firstAttribute="trailing" secondItem="BJo-qv-KnP" secondAttribute="trailing" id="LKY-bs-tLu"/>
+                                    <constraint firstItem="U3g-IM-hN5" firstAttribute="top" secondItem="RfB-gp-i5o" secondAttribute="bottom" constant="8" symbolic="YES" id="Ldj-h6-q7I"/>
                                     <constraint firstItem="BJo-qv-KnP" firstAttribute="top" secondItem="2fa-6x-3nF" secondAttribute="bottom" constant="16" id="QUN-Kq-YNp"/>
                                     <constraint firstItem="2fa-6x-3nF" firstAttribute="centerX" secondItem="3il-ud-v2w" secondAttribute="centerX" id="RYd-LY-RXJ"/>
                                     <constraint firstAttribute="trailing" secondItem="BJo-qv-KnP" secondAttribute="trailing" constant="16" id="SD2-lk-rhe"/>
-                                    <constraint firstItem="cYz-T7-C2G" firstAttribute="leading" secondItem="3il-ud-v2w" secondAttribute="leading" constant="16" id="ZJU-wX-cuo"/>
+                                    <constraint firstItem="s9q-Bp-jfx" firstAttribute="leading" secondItem="RfB-gp-i5o" secondAttribute="leading" id="cmF-Cr-bb9"/>
+                                    <constraint firstItem="s9q-Bp-jfx" firstAttribute="trailing" secondItem="RfB-gp-i5o" secondAttribute="trailing" id="com-cs-5cS"/>
+                                    <constraint firstAttribute="bottom" secondItem="U3g-IM-hN5" secondAttribute="bottom" constant="180" id="j11-D3-ieF"/>
                                     <constraint firstItem="2fa-6x-3nF" firstAttribute="top" secondItem="3il-ud-v2w" secondAttribute="top" constant="16" id="oAH-RH-3Lx"/>
                                     <constraint firstAttribute="trailing" secondItem="2fa-6x-3nF" secondAttribute="trailing" id="rU4-wS-eL9"/>
+                                    <constraint firstItem="s9q-Bp-jfx" firstAttribute="top" secondItem="BJo-qv-KnP" secondAttribute="bottom" constant="16" id="t8b-pA-vQw"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -156,7 +145,8 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="headerImage" destination="2fa-6x-3nF" id="Zbc-wz-bxU"/>
-                        <outlet property="healthierPicksTable" destination="ULS-aO-HGO" id="Foh-ud-2HP"/>
+                        <outlet property="healthierPicksTable" destination="RfB-gp-i5o" id="kIJ-Ws-u8l"/>
+                        <outlet property="healthierPicksTableHeightConstraint" destination="PDI-j3-rdq" id="zuD-t8-jMd"/>
                         <outlet property="isFavoritedBarButton" destination="8nd-l0-xbl" id="etL-lJ-sRM"/>
                         <outlet property="restaurantTitle" destination="BJo-qv-KnP" id="LNB-mF-vo9"/>
                         <segue destination="JpR-tB-9ew" kind="show" identifier="restaurantOverviewToMenusSegue" id="XOx-MT-VXb"/>
