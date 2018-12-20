@@ -8,5 +8,6 @@ target 'Betterplate' do
   # Pods for Betterplate
     pod 'RealmSwift'
     pod 'SVProgressHUD'
+    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
 end

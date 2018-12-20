@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import SVProgressHUD
 
 class CurrentMealService {
     
@@ -20,6 +21,8 @@ class CurrentMealService {
             do {
                 try userRealm.write {
                     userRealm.delete(matchingFoods[0])
+                    SVProgressHUD.showSuccess(withStatus: "Removed From Meal")
+                    SVProgressHUD.dismiss(withDelay: TimeInterval(exactly: 2)!)
                 }
             } catch {
                 print("Could not remove item from meal \(error)")
@@ -33,12 +36,15 @@ class CurrentMealService {
         do {
             try userRealm.write {
                 userRealm.add(newMealItem)
+                SVProgressHUD.showSuccess(withStatus: "Added to Meal")
+                SVProgressHUD.dismiss(withDelay: TimeInterval(exactly: 2)!)
             }
         } catch {
             print("Could not add item to meal \(error)")
         }
     }
     
+    // TODO consider just using the result class
     func getFoodsInMeal() -> [Food] {
         let mealItems = getCurrentMealList()
         var foodsInMeal:[Food] = []
@@ -54,7 +60,7 @@ class CurrentMealService {
     }
     
     // Returns list of food ID's, if none currently exists in realm, will populate one automatically
-    func getCurrentMealList() -> Results<CurrentMealItem> {
+    private func getCurrentMealList() -> Results<CurrentMealItem> {
         return userRealm.objects(CurrentMealItem.self)
     }
     

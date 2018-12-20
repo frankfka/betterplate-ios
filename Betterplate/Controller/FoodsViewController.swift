@@ -17,6 +17,9 @@ class FoodsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "foodCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
         if let menuId = parentMenuId {
             getAllFoods(for: menuId)
         }
@@ -34,8 +37,10 @@ class FoodsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath)
-        cell.textLabel?.text = foods?[indexPath.row].foodName ?? "No Foods Available"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodCell
+        let food = foods![indexPath.row]
+        cell.foodNameLabel.text = food.foodName
+        cell.updateNutritionLabel(for: food)
         return cell
     }
     

@@ -32,7 +32,6 @@ class FoodDetailViewController: UIViewController {
         if let currentFood = food {
             mealService.addFoodToMeal(food: currentFood)
         }
-        // Present an alert?
     }
     
     

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="90" id="mrP-Of-nIQ" customClass="FoodCell" customModule="Betterplate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrP-Of-nIQ" id="ZcM-ec-A7e">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name Food Name Food Name Food Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUA-ET-6Cp">
+                        <rect key="frame" x="16" y="12" width="309" height="43"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-td-Wcv">
+                        <rect key="frame" x="16" y="59" width="309" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LM3-td-Wcv" secondAttribute="trailing" constant="16" id="Col-AQ-11L"/>
+                    <constraint firstItem="LM3-td-Wcv" firstAttribute="leading" secondItem="ZcM-ec-A7e" secondAttribute="leading" constant="16" id="Hho-EF-Yq9"/>
+                    <constraint firstAttribute="bottom" secondItem="LM3-td-Wcv" secondAttribute="bottom" constant="11.5" id="Zd8-r9-aN9"/>
+                    <constraint firstAttribute="trailing" secondItem="dUA-ET-6Cp" secondAttribute="trailing" constant="16" id="hyE-Gf-QmS"/>
+                    <constraint firstItem="dUA-ET-6Cp" firstAttribute="leading" secondItem="ZcM-ec-A7e" secondAttribute="leading" constant="16" id="k5v-gv-887"/>
+                    <constraint firstItem="LM3-td-Wcv" firstAttribute="top" secondItem="dUA-ET-6Cp" secondAttribute="bottom" constant="4" id="t08-tf-gkv"/>
+                    <constraint firstItem="dUA-ET-6Cp" firstAttribute="top" secondItem="ZcM-ec-A7e" secondAttribute="top" constant="12" id="zzS-S6-XOP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+            <connections>
+                <outlet property="foodNameLabel" destination="dUA-ET-6Cp" id="a0W-be-33o"/>
+                <outlet property="nutritionLabel" destination="LM3-td-Wcv" id="3LX-kc-pR6"/>
+            </connections>
+            <point key="canvasLocation" x="154.40000000000001" y="344.52773613193403"/>
+        </tableViewCell>
+    </objects>
+</document>

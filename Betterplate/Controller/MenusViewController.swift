@@ -17,6 +17,9 @@ class MenusViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "menuCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 45
         if let restaurantId = parentRestuaurantId {
             getAllMenus(for: restaurantId)
         }
@@ -34,8 +37,8 @@ class MenusViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
-        cell.textLabel?.text = menus?[indexPath.row].menuName ?? "No Menus Available"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuCell
+        cell.menuNameLabel.text = menus?[indexPath.row].menuName ?? "No Menus Available"
         return cell
     }
     
