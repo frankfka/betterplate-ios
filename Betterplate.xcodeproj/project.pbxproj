@@ -28,12 +28,14 @@
 		1152DFDF21CB527F00963088 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1152DFDD21CB527F00963088 /* MenuCell.xib */; };
 		1152DFE121CB54FD00963088 /* FavoriteRestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DFE021CB54FD00963088 /* FavoriteRestaurantService.swift */; };
 		1152DFE321CBEF4E00963088 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DFE221CBEF4E00963088 /* RestaurantService.swift */; };
+		1152DFE721CC950400963088 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152DFE621CC950400963088 /* MenuService.swift */; };
 		1172F21321CB339E00F3240A /* RestaurantOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172F21221CB339E00F3240A /* RestaurantOverviewViewController.swift */; };
 		1172F21521CB469D00F3240A /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172F21421CB469D00F3240A /* FoodCell.swift */; };
 		1172F21721CB46B600F3240A /* FoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1172F21621CB46B600F3240A /* FoodCell.xib */; };
 		118E1C5B21CA016900B74C95 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118E1C5A21CA016900B74C95 /* RestaurantCell.xib */; };
 		118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */; };
 		11AEBC2121C8CB90003613CE /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */; };
+		11DBA38B21CCB2D40031FB06 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBA38A21CCB2D40031FB06 /* FoodService.swift */; };
 		D12C278DFB9C5177C86682B1 /* Pods_Betterplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,12 +63,14 @@
 		1152DFDD21CB527F00963088 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		1152DFE021CB54FD00963088 /* FavoriteRestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurantService.swift; sourceTree = "<group>"; };
 		1152DFE221CBEF4E00963088 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		1152DFE621CC950400963088 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		1172F21221CB339E00F3240A /* RestaurantOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOverviewViewController.swift; sourceTree = "<group>"; };
 		1172F21421CB469D00F3240A /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		1172F21621CB46B600F3240A /* FoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCell.xib; sourceTree = "<group>"; };
 		118E1C5A21CA016900B74C95 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
+		11DBA38A21CCB2D40031FB06 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
 		38899149A628C256E3C20E72 /* Pods-Betterplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.release.xcconfig"; sourceTree = "<group>"; };
 		C33BB3E657F308BA068FE214 /* Pods-Betterplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,8 @@
 				1152C57721C759CF004A0205 /* CurrentMealService.swift */,
 				1152DFE021CB54FD00963088 /* FavoriteRestaurantService.swift */,
 				1152DFE221CBEF4E00963088 /* RestaurantService.swift */,
+				1152DFE621CC950400963088 /* MenuService.swift */,
+				11DBA38A21CCB2D40031FB06 /* FoodService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -324,6 +331,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -341,10 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1152DFE121CB54FD00963088 /* FavoriteRestaurantService.swift in Sources */,
+				11DBA38B21CCB2D40031FB06 /* FoodService.swift in Sources */,
 				1172F21321CB339E00F3240A /* RestaurantOverviewViewController.swift in Sources */,
 				118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */,
 				1152DFDE21CB527F00963088 /* MenuCell.swift in Sources */,
 				113E6E7221C62333008FC324 /* Restaurant.swift in Sources */,
+				1152DFE721CC950400963088 /* MenuService.swift in Sources */,
 				1152C56721C7418A004A0205 /* MealViewController.swift in Sources */,
 				1152C56F21C75333004A0205 /* FoodDetailViewController.swift in Sources */,
 				113E6E5E21C62095008FC324 /* HomeViewController.swift in Sources */,

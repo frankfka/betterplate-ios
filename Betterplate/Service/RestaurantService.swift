@@ -18,15 +18,18 @@ class RestaurantService {
         allRestaurants = dataRealm.objects(Restaurant.self).sorted(byKeyPath: "restaurantName", ascending: true)
     }
     
-    func getHealthierPicks(for restaurant: Restaurant) -> [Food] {
-        let restaurantMenus = dataRealm.objects(Menu.self).filter("restaurantId == \(restaurant.restaurantId)")
-        var healthierPicks: [Food] = []
+    func getHealthierPicks(for restaurant: Restaurant) -> Results<Food> {
+        return getAllFoods(for: restaurant.restaurantId).filter("isFeatured == \(1)")
+    }
+    
+    func getAllFoods(for restaurantId: Int) -> Results<Food> {
+        let restaurantMenus = dataRealm.objects(Menu.self).filter("restaurantId == \(restaurantId)")
+        var filterString = "menuId == "
         for menu in restaurantMenus {
-            for food in dataRealm.objects(Food.self).filter("menuId == \(menu.menuId) AND isFeatured == \(1)") {
-                healthierPicks.append(food)
-            }
+            filterString.append("\(menu.menuId) OR menuId == ")
         }
-        return healthierPicks
+        filterString.removeLast(13)
+        return dataRealm.objects(Food.self).filter(filterString)
     }
     
     func getRestaurant(from restaurantId: Int) -> Restaurant? {

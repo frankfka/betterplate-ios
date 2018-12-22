@@ -9,5 +9,6 @@ target 'Betterplate' do
     pod 'RealmSwift'
     pod 'SVProgressHUD'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+    pod 'NewPopMenu'
 
 end

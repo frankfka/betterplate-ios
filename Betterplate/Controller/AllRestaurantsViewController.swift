@@ -13,6 +13,7 @@ class AllRestaurantsViewController: UITableViewController, UISearchBarDelegate {
     
     let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
     var restaurants: Results<Restaurant>?
+    var restaurantsToSearchFrom: Results<Restaurant>?
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -22,8 +23,10 @@ class AllRestaurantsViewController: UITableViewController, UISearchBarDelegate {
         tableView.register(UINib(nibName: "RestaurantCell", bundle: nil), forCellReuseIdentifier: "restaurantCell")
     }
 
-    func getAllRestaurants() {
+    private func getAllRestaurants() {
+        // TODO this is ugly, refactor
         restaurants = RestaurantService().getAllRestaurantResults()
+        restaurantsToSearchFrom = RestaurantService().getAllRestaurantResults()
         tableView.reloadData()
     }
     
@@ -54,7 +57,7 @@ class AllRestaurantsViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: - Search bar methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        restaurants = restaurants?.filter("restaurantName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "restaurantName", ascending: true)
+        restaurants = restaurantsToSearchFrom?.filter("restaurantName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "restaurantName", ascending: true)
         tableView.reloadData()
         searchBar.resignFirstResponder()
     }

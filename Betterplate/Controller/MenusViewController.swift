@@ -33,12 +33,23 @@ class MenusViewController: UITableViewController {
     
     //MARK: - TableView Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menus?.count ?? 0
+        // Adding extra row for "All foods"
+        if let listOfMenus = menus {
+            return listOfMenus.count + 1
+        }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuCell
-        cell.menuNameLabel.text = menus?[indexPath.row].menuName ?? "No Menus Available"
+        let currentRow = indexPath.row
+        if let listOfMenus = menus {
+            if currentRow == 0 {
+                cell.menuNameLabel.text = "All Items"
+            } else {
+                cell.menuNameLabel.text = listOfMenus[currentRow - 1].menuName
+            }
+        }
         return cell
     }
     
@@ -49,7 +60,12 @@ class MenusViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! FoodsViewController
         if let currentSelectedIndexPath = tableView.indexPathForSelectedRow {
-            destinationVC.parentMenuId = menus?[currentSelectedIndexPath.row].menuId
+            if currentSelectedIndexPath.row == 0 {
+                // Initialize parentRestaurant to load all foods
+                destinationVC.parentRestaurantId = parentRestuaurantId!
+            } else {
+                destinationVC.parentMenuId = menus?[currentSelectedIndexPath.row - 1].menuId
+            }
         }
     }
 

@@ -17,13 +17,38 @@ class FoodDetailViewController: UIViewController {
     let mealService = CurrentMealService()
     
     @IBOutlet weak var foodNameLabel: UILabel!
+    @IBOutlet weak var nutritionSummaryLabel: UILabel!
+    @IBOutlet weak var servingSizeLabel: UILabel!
+    // Nutriton Stuff
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var totFatLabel: UILabel!
+    @IBOutlet weak var satFatLabel: UILabel!
+    @IBOutlet weak var transFatLabel: UILabel!
+    @IBOutlet weak var cholesterolLabel: UILabel!
+    @IBOutlet weak var sodiumLabel: UILabel!
+    @IBOutlet weak var carbsLabel: UILabel!
+    @IBOutlet weak var fiberLabel: UILabel!
+    @IBOutlet weak var sugarLabel: UILabel!
+    @IBOutlet weak var proteinLabel: UILabel!
+    @IBOutlet weak var calciumLabel: UILabel!
+    @IBOutlet weak var ironLabel: UILabel!
+    @IBOutlet weak var vitALabel: UILabel!
+    @IBOutlet weak var vitCLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let currentFoodId = foodId {
-            food = realm.objects(Food.self).filter("foodId == \(currentFoodId)")[0]
-            foodNameLabel.text = food?.foodName
+            let food = realm.objects(Food.self).filter("foodId == \(currentFoodId)")[0]
+            foodNameLabel.text = food.foodName
+            nutritionSummaryLabel.text = "\(Int(food.calories)) Cal | C: \(Int(food.carbohydrates))g F: \(Int(food.fat))g P: \(Int(food.protein))g"
+            if let servingSize = food.servingSize {
+                servingSizeLabel.text = "Serving Size: \(servingSize)"
+            }
+            // Separate method so we can extract this stuff later
+            populateNutritionViews(for: food)
         } else {
+            print("Current food ID not initialized")
             // Show some error?
         }
     }
@@ -34,16 +59,20 @@ class FoodDetailViewController: UIViewController {
         }
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func populateNutritionViews(for food: Food) {
+        caloriesLabel.text = "\(food.calories) Cal"
+        totFatLabel.text = "\(food.fat) g"
+        satFatLabel.text = "\(food.saturatedFat) g"
+        transFatLabel.text = "\(food.transFat) g"
+        cholesterolLabel.text = "\(food.cholesterol) mg"
+        sodiumLabel.text = "\(food.sodium) mg"
+        carbsLabel.text = "\(food.carbohydrates) g"
+        fiberLabel.text = "\(food.fiber) g"
+        sugarLabel.text = "\(food.sugar) g"
+        proteinLabel.text = "\(food.protein) g"
+        calciumLabel.text = "\(food.calcium) %"
+        ironLabel.text = "\(food.iron) %"
+        vitALabel.text = "\(food.vitaminA) %"
+        vitCLabel.text = "\(food.vitaminC) %"
     }
-    */
-
 }
