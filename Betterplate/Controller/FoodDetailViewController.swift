@@ -13,7 +13,6 @@ class FoodDetailViewController: UIViewController {
     
     let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
     var foodId:Int?
-    var food:Food?
     let mealService = CurrentMealService()
     
     @IBOutlet weak var foodNameLabel: UILabel!
@@ -54,8 +53,8 @@ class FoodDetailViewController: UIViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        if let currentFood = food {
-            mealService.addFoodToMeal(food: currentFood)
+        if let currentFoodId = foodId {
+            mealService.addFoodToMeal(withId: currentFoodId)
         }
     }
     

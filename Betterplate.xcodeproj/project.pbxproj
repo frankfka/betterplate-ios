@@ -36,6 +36,7 @@
 		118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */; };
 		11AEBC2121C8CB90003613CE /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */; };
 		11DBA38B21CCB2D40031FB06 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBA38A21CCB2D40031FB06 /* FoodService.swift */; };
+		11DBA38D21CDDE210031FB06 /* ViewHelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBA38C21CDDE210031FB06 /* ViewHelperService.swift */; };
 		D12C278DFB9C5177C86682B1 /* Pods_Betterplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		11DBA38A21CCB2D40031FB06 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
+		11DBA38C21CDDE210031FB06 /* ViewHelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelperService.swift; sourceTree = "<group>"; };
 		38899149A628C256E3C20E72 /* Pods-Betterplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.release.xcconfig"; sourceTree = "<group>"; };
 		C33BB3E657F308BA068FE214 /* Pods-Betterplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 				1152DFE221CBEF4E00963088 /* RestaurantService.swift */,
 				1152DFE621CC950400963088 /* MenuService.swift */,
 				11DBA38A21CCB2D40031FB06 /* FoodService.swift */,
+				11DBA38C21CDDE210031FB06 /* ViewHelperService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				113E6E6E21C62178008FC324 /* Food.swift in Sources */,
 				113E6E7521C62584008FC324 /* RealmConfig.swift in Sources */,
 				1172F21521CB469D00F3240A /* FoodCell.swift in Sources */,
+				11DBA38D21CDDE210031FB06 /* ViewHelperService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

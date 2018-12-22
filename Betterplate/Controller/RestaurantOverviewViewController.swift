@@ -27,6 +27,8 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
         super.viewDidLoad()
         if let restaurantId = parentRestuaurantId {
             
+            let viewHelper = ViewHelperService()
+            
             // Get Restaurants
             restaurant = realm.objects(Restaurant.self).filter("restaurantId == \(restaurantId)")[0]
             
@@ -39,30 +41,12 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             // Set up tableview
             healthierPicksTable.delegate = self
             healthierPicksTable.dataSource = self
-            healthierPicksTable.isScrollEnabled = false
             healthierPicks = RestaurantService().getHealthierPicks(for: restaurant!)
             healthierPicksTable.register(UINib(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "foodCell")
-            healthierPicksTable.rowHeight = UITableView.automaticDimension
-            healthierPicksTable.estimatedRowHeight = 80
-            healthierPicksTableHeightConstraint.constant = 1000
-            UIView.animate(withDuration: 0, animations: {
-                self.healthierPicksTable.layoutIfNeeded()
-            }) { (complete) in
-                var heightOfTableView: CGFloat = 0.0
-                // Get visible cells and sum up their heights
-                let cells = self.healthierPicksTable.visibleCells
-                for cell in cells {
-                    heightOfTableView += cell.frame.height
-                }
-                self.healthierPicksTableHeightConstraint.constant = heightOfTableView
-            }
+            viewHelper.updateTableviewSize(tableView: healthierPicksTable, tableViewHeightConstraint: healthierPicksTableHeightConstraint)
             
             // Update scrollview size
-            var contentRect = CGRect.zero
-            for view in mainScrollView.subviews {
-                contentRect = contentRect.union(view.frame)
-            }
-            mainScrollView.contentSize = contentRect.size
+            viewHelper.updateScrollviewSize(scrollView: mainScrollView)
         }
     }
     
