@@ -46,7 +46,7 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             viewHelper.updateTableviewSize(tableView: healthierPicksTable, tableViewHeightConstraint: healthierPicksTableHeightConstraint)
             
             // Update scrollview size
-            viewHelper.updateScrollviewSize(scrollView: mainScrollView)
+            viewHelper.updateScrollViewSize(scrollView: mainScrollView)
         }
     }
     

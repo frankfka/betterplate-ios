@@ -28,12 +28,16 @@ class ViewHelperService {
         }
     }
     
-    func updateScrollviewSize(scrollView: UIScrollView) {
+    func updateScrollViewSize(scrollView: UIScrollView, minHeight: CGFloat = CGFloat(integerLiteral: 0)) {
         var contentRect = CGRect.zero
         for view in scrollView.subviews {
             contentRect = contentRect.union(view.frame)
         }
-        scrollView.contentSize = contentRect.size
+        if minHeight > contentRect.size.height {
+            scrollView.contentSize.height = minHeight
+        } else {
+            scrollView.contentSize = contentRect.size
+        }
     }
     
 }

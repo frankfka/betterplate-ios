@@ -101,7 +101,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         itemsInMeal = mealService.getFoodsInMeal()
         mealItemsTable.reloadData()
         viewHelper.updateTableviewSize(tableView: mealItemsTable, tableViewHeightConstraint: mealItemsHeightConstraint)
-        viewHelper.updateScrollviewSize(scrollView: mainScrollView)
+        viewHelper.updateScrollViewSize(scrollView: mainScrollView)
         
         // Edit button & help text
         if itemsInMeal.isEmpty {

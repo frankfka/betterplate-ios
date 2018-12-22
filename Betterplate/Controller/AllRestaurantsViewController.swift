@@ -38,8 +38,7 @@ class AllRestaurantsViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! RestaurantCell
         if let restaurant = restaurants?[indexPath.row] {
-            cell.restaurantNameLabel.text = restaurant.restaurantName
-            cell.restaurantImage.image = UIImage(named: restaurant.imageKey)
+            cell.updateLabels(for: restaurant)
         }
         return cell
     }

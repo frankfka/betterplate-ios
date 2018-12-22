@@ -11,22 +11,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="60" id="39w-nf-lZY" customClass="RestaurantCell" customModule="Betterplate" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="71" id="39w-nf-lZY" customClass="RestaurantCell" customModule="Betterplate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="39w-nf-lZY" id="cDc-nM-Dy4">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptl-lf-d9z">
-                        <rect key="frame" x="311" y="6" width="48" height="48"/>
+                        <rect key="frame" x="315" y="11.5" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48" id="EGt-pP-M4R"/>
                             <constraint firstAttribute="height" constant="48" id="Uag-DE-Yf7"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8v-4x-DzG">
-                        <rect key="frame" x="16" y="18" width="279" height="23.5"/>
+                        <rect key="frame" x="16" y="23.5" width="283" height="23.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -34,9 +34,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="ptl-lf-d9z" firstAttribute="leading" secondItem="z8v-4x-DzG" secondAttribute="trailing" constant="16" id="WwW-oG-20b"/>
+                    <constraint firstAttribute="bottom" secondItem="ptl-lf-d9z" secondAttribute="bottom" constant="11" id="dpE-oP-Lxt"/>
                     <constraint firstItem="z8v-4x-DzG" firstAttribute="centerY" secondItem="cDc-nM-Dy4" secondAttribute="centerY" id="hFO-Gd-Xg7"/>
-                    <constraint firstItem="ptl-lf-d9z" firstAttribute="centerY" secondItem="cDc-nM-Dy4" secondAttribute="centerY" id="igk-9I-Wsg"/>
-                    <constraint firstItem="ptl-lf-d9z" firstAttribute="trailing" secondItem="cDc-nM-Dy4" secondAttribute="trailingMargin" id="rLt-NV-2R1"/>
+                    <constraint firstItem="ptl-lf-d9z" firstAttribute="top" secondItem="cDc-nM-Dy4" secondAttribute="top" constant="11.5" id="q3F-TE-6mq"/>
+                    <constraint firstItem="ptl-lf-d9z" firstAttribute="trailing" secondItem="cDc-nM-Dy4" secondAttribute="trailingMargin" constant="4" id="rLt-NV-2R1"/>
                     <constraint firstItem="z8v-4x-DzG" firstAttribute="leading" secondItem="cDc-nM-Dy4" secondAttribute="leadingMargin" id="wWZ-fq-Ygo"/>
                 </constraints>
             </tableViewCellContentView>
@@ -46,7 +47,7 @@
                 <outlet property="restaurantImage" destination="ptl-lf-d9z" id="OT3-K3-uNC"/>
                 <outlet property="restaurantNameLabel" destination="z8v-4x-DzG" id="bzC-d8-8OR"/>
             </connections>
-            <point key="canvasLocation" x="109.59999999999999" y="260.86956521739131"/>
+            <point key="canvasLocation" x="109.59999999999999" y="255.92203898050977"/>
         </tableViewCell>
     </objects>
 </document>

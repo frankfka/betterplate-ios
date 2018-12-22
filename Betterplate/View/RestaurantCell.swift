@@ -17,4 +17,9 @@ class RestaurantCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    func updateLabels(for restaurant: Restaurant) {
+        restaurantNameLabel.text = restaurant.restaurantName
+        restaurantImage.image = UIImage(named: restaurant.imageKey)
+    }
+    
 }

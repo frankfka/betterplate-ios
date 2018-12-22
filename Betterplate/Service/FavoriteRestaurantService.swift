@@ -44,7 +44,6 @@ class FavoriteRestaurantService {
         }
     }
     
-    // TODO consider just using the result class
     func getAllFavoriteRestaurants() -> [Restaurant] {
         var allFavoriteRestaurants: [Restaurant] = []
         for restaurant in getFavoriteRestaurants() {
