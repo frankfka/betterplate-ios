@@ -56,8 +56,10 @@ class AllRestaurantsViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: - Search bar methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        restaurants = restaurantsToSearchFrom?.filter("restaurantName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "restaurantName", ascending: true)
-        tableView.reloadData()
+        if (searchBar.text != nil) && searchBar.text!.count > 0 {
+            restaurants = restaurantsToSearchFrom?.filter("restaurantName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "restaurantName", ascending: true)
+            tableView.reloadData()
+        }
         searchBar.resignFirstResponder()
     }
     

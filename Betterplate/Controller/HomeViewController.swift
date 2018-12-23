@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         viewHelper.updateTableviewSize(tableView: mealTable, tableViewHeightConstraint: mealTableHeight)
         viewHelper.updateTableviewSize(tableView: favoriteRestaurantsTable, tableViewHeightConstraint: favoriteRestaurantsHeight)
         // TODO this doesnt work :(
-        viewHelper.updateScrollViewSize(scrollView: mainScrollView, minHeight: CGFloat(integerLiteral: 2000))
+        viewHelper.updateScrollViewSize(scrollView: mainScrollView)
     }
 
     // MARK: - Tableview methods

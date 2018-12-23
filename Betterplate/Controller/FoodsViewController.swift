@@ -79,8 +79,10 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: - Search bar methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        foods = foodsToSearchFrom?.filter("foodName CONTAINS[cd] %@", searchBar.text!)
-        tableView.reloadData()
+        if (searchBar.text != nil) && searchBar.text!.count > 0 {
+            foods = foodsToSearchFrom?.filter("foodName CONTAINS[cd] %@", searchBar.text!)
+            tableView.reloadData()
+        }
         searchBar.resignFirstResponder()
     }
     
