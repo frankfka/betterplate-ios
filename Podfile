@@ -10,5 +10,6 @@ target 'Betterplate' do
     pod 'SVProgressHUD'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
     pod 'NewPopMenu'
+    pod 'RangeSeekSlider'
 
 end

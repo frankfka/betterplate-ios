@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import RangeSeekSlider
 
 class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -22,6 +23,8 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var restaurantTitle: UILabel!
     @IBOutlet weak var isFavoritedBarButton: UIBarButtonItem!
     @IBOutlet weak var healthierPicksTableHeightConstraint: NSLayoutConstraint!
+    // Advanced Search
+    @IBOutlet fileprivate weak var rangeSlider: RangeSeekSlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +50,10 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             
             // Update scrollview size
             viewHelper.updateScrollViewSize(scrollView: mainScrollView)
+            
+            // Set up sliders
+            rangeSlider.delegate = self
+            
         }
     }
     
@@ -106,4 +113,14 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
         }
     }
 
+}
+
+// MARK: - RangeSeekSliderDelegate
+extension RestaurantOverviewViewController: RangeSeekSliderDelegate {
+    
+    func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
+        print("min: \(minValue), max: \(maxValue)")
+    }
+    
+    
 }

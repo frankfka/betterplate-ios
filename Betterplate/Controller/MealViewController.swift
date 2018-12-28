@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RangeSeekSlider
 
 class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
