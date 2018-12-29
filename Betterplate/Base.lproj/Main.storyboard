@@ -762,11 +762,12 @@
                         <outlet property="vegetarianSwitch" destination="ccB-th-606" id="TNu-p3-dXg"/>
                         <segue destination="JpR-tB-9ew" kind="show" identifier="restaurantOverviewToMenusSegue" id="XOx-MT-VXb"/>
                         <segue destination="hEJ-5B-CRU" kind="show" identifier="healthyPicksToFoodDetailsSegue" id="ePC-Ff-IGG"/>
+                        <segue destination="s5C-lJ-jNe" kind="show" identifier="advancedSearchToFoodsSegue" id="UiM-bu-GGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYu-gk-7I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.3913043478262" y="211.14130434782609"/>
+            <point key="canvasLocation" x="1867" y="212"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="k32-np-U4B">
@@ -821,7 +822,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0b-dy-R3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576.811594202899" y="212.77173913043481"/>
+            <point key="canvasLocation" x="2610" y="-302"/>
         </scene>
         <!--Menu-->
         <scene sceneID="KBH-GB-xC1">
@@ -861,7 +862,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCB-S9-Ygv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300.0000000000005" y="212.77173913043481"/>
+            <point key="canvasLocation" x="3341" y="212"/>
         </scene>
         <!--Food Detail View Controller-->
         <scene sceneID="Vfc-qq-lKi">
@@ -1218,7 +1219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zma-VB-S22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008.6956521739132" y="963.58695652173924"/>
+            <point key="canvasLocation" x="1867" y="1092"/>
         </scene>
         <!--Home-->
         <scene sceneID="lYh-wY-GVF">
@@ -1443,7 +1444,8 @@
         <image name="restaurants_primary" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ePC-Ff-IGG"/>
+        <segue reference="kt8-lj-ckf"/>
+        <segue reference="UiM-bu-GGc"/>
         <segue reference="Dsf-ZG-UAP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -89,6 +89,10 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
         } else if segue.identifier == "healthyPicksToFoodDetailsSegue" {
             let destinationVC = segue.destination as! FoodDetailViewController
             destinationVC.foodId = pickedFoodItemId!
+        } else if segue.identifier == "advancedSearchToFoodsSegue" {
+            let destinationVC = segue.destination as! FoodsViewController
+            destinationVC.parentRestaurantId = parentRestuaurantId!
+            destinationVC.foodFilters = advancedSearchFilters!
         }
     }
     
@@ -113,8 +117,7 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
     
     // MARK: - Advanced Search Stuff
     @IBAction func advancedSearchButtonPressed(_ sender: UIButton) {
-        // Set properties of the segue class then prepare for the segue
-        print("Search button pressed")
+        performSegue(withIdentifier: "advancedSearchToFoodsSegue", sender: self)
     }
     
     @IBAction func searchResetButtonPressed(_ sender: UIButton) {

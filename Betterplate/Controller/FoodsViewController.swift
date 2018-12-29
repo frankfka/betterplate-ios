@@ -13,8 +13,12 @@ import PopMenu
 class FoodsViewController: UITableViewController, UISearchBarDelegate {
     
     let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
+    // For all items
     var parentRestaurantId: Int?
+    // For menu
     var parentMenuId: Int?
+    // For advanced search
+    var foodFilters: [FoodFilters: String]?
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
     var foods: Results<Food>?
@@ -36,18 +40,27 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
     }
     
     private func loadFoods() {
-        // Retrieve foods from menu or get all
-        let foodService: FoodService = FoodService()
+        
+        // Retrieve foods from menu or get all (and filter if filters are given)
+        let foodService = FoodService()
+        let restaurantService = RestaurantService()
         if let menuId = parentMenuId {
             navItem.title = realm.objects(Menu.self).filter("menuId == \(menuId)")[0].menuName
             // TODO: this is ugly, refactor when you have time
             foods = MenuService().getFoods(for: menuId)
             foodsToSearchFrom = MenuService().getFoods(for: menuId)
         } else if let restaurantId = parentRestaurantId {
-            // Loading all foods if menu Id is not initialized
-            navItem.title = "All Items"
-            foods = RestaurantService().getAllFoods(for: restaurantId)
-            foodsToSearchFrom = RestaurantService().getAllFoods(for: restaurantId)
+            
+            if let searchFilters = foodFilters {
+                navItem.title = "Search Results"
+                foods = foodService.filterFoods(for: restaurantService.getAllFoods(for: restaurantId), with: searchFilters)
+                foodsToSearchFrom = foodService.filterFoods(for: restaurantService.getAllFoods(for: restaurantId), with: searchFilters)
+            } else {
+                navItem.title = "All Items"
+                foods = restaurantService.getAllFoods(for: restaurantId)
+                foodsToSearchFrom = restaurantService.getAllFoods(for: restaurantId)
+            }
+            
         }
         foods = foodService.sortFoods(for: foods!, with: selectedSortType)
         foodsToSearchFrom = foodService.sortFoods(for: foodsToSearchFrom!, with: selectedSortType)
