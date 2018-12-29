@@ -13,10 +13,13 @@ import RangeSeekSlider
 class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let realm = try! Realm(configuration: RealmConfig.foodDataConfig())
+    let restaurantService = RestaurantService()
     var parentRestuaurantId: Int?
     var restaurant: Restaurant?
     var healthierPicks: Results<Food>?
     var pickedFoodItemId: Int?
+    var advancedSearchFilters: [FoodFilters:String]?
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var healthierPicksTable: UITableView!
@@ -24,7 +27,15 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var isFavoritedBarButton: UIBarButtonItem!
     @IBOutlet weak var healthierPicksTableHeightConstraint: NSLayoutConstraint!
     // Advanced Search
-    @IBOutlet fileprivate weak var rangeSlider: RangeSeekSlider!
+    @IBOutlet weak var calSlider: RangeSeekSlider!
+    @IBOutlet weak var proteinSlider: RangeSeekSlider!
+    @IBOutlet weak var carbSlider: RangeSeekSlider!
+    @IBOutlet weak var fatSlider: RangeSeekSlider!
+    @IBOutlet weak var vegetarianSwitch: UISwitch!
+    @IBOutlet weak var gfSwitch: UISwitch!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var advancedSearchButton: UIButton!
+    @IBOutlet weak var advancedSearchResultsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +62,13 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             // Update scrollview size
             viewHelper.updateScrollViewSize(scrollView: mainScrollView)
             
-            // Set up sliders
-            rangeSlider.delegate = self
+            // Set up sliders with min & max values from the food list
+            calSlider.delegate = self
+            proteinSlider.delegate = self
+            fatSlider.delegate = self
+            carbSlider.delegate = self
+            initializeSliders()
+            updateAdvancedSearch()
             
         }
     }
@@ -95,6 +111,28 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: - Advanced Search Stuff
+    @IBAction func advancedSearchButtonPressed(_ sender: UIButton) {
+        // Set properties of the segue class then prepare for the segue
+        print("Search button pressed")
+    }
+    
+    @IBAction func searchResetButtonPressed(_ sender: UIButton) {
+        initializeSliders()
+        // TODO seems to be a bug - needs to be called twice. also can optimize performance in that function
+        initializeSliders()
+        updateAdvancedSearch()
+    }
+    
+    @IBAction func vegetarianButtonToggled(_ sender: UISwitch) {
+        updateAdvancedSearch()
+    }
+    
+    @IBAction func gfButtonToggled(_ sender: UISwitch) {
+        updateAdvancedSearch()
+    }
+    
+    
     // MARK: - Helper methods
     private func updateIsFavorite(toggle: Bool) {
         let favoriteRestaurantService = FavoriteRestaurantService()
@@ -112,14 +150,79 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             isFavoritedBarButton.image = UIImage(named: "favorite_primary")
         }
     }
+    
+    private func getRoundedCGFloat(for value: Double, roundedTo: Double) -> CGFloat {
+        return CGFloat(roundedTo) * CGFloat(value / roundedTo).rounded(.up)
+    }
 
 }
 
 // MARK: - RangeSeekSliderDelegate
 extension RestaurantOverviewViewController: RangeSeekSliderDelegate {
     
-    func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
-        print("min: \(minValue), max: \(maxValue)")
+    func didEndTouches(in slider: RangeSeekSlider) {
+        updateAdvancedSearch()
+    }
+    
+    private func updateAdvancedSearch() {
+        // States
+        let minCalories = calSlider.selectedMinValue
+        let maxCalories = calSlider.selectedMaxValue
+        let minProtein = proteinSlider.selectedMinValue
+        let maxProtein = proteinSlider.selectedMaxValue
+        let minCarbs = carbSlider.selectedMinValue
+        let maxCarbs = carbSlider.selectedMaxValue
+        let minFat = fatSlider.selectedMinValue
+        let maxFat = fatSlider.selectedMaxValue
+        let wantsVeg = vegetarianSwitch.isOn
+        let wantsGF = gfSwitch.isOn
+        let filters: [FoodFilters: String] = [
+            .MIN_CALS:minCalories.description,
+            .MAX_CALS:maxCalories.description,
+            .MIN_PROTEIN:minProtein.description,
+            .MAX_PROTEIN:maxProtein.description,
+            .MIN_CARBS:minCarbs.description,
+            .MAX_CARBS:maxCarbs.description,
+            .MIN_FAT:minFat.description,
+            .MAX_FAT:maxFat.description,
+            .WANTS_GF: String(wantsGF),
+            .WANTS_VEG: String(wantsVeg)
+        ]
+        
+        // Update variables and labels
+        self.advancedSearchFilters = filters
+        let numResults = FoodService().filterFoods(for: restaurantService.getAllFoods(for: parentRestuaurantId!), with: filters).count
+        advancedSearchResultsLabel.text = "Number of Results: \(numResults)"
+    }
+    
+    private func initializeSliders() {
+        var allFoodsForRestaurant: Results<Food> = restaurantService.getAllFoods(for: parentRestuaurantId!)
+        allFoodsForRestaurant = allFoodsForRestaurant.sorted(byKeyPath: "calories", ascending: true)
+        calSlider.minValue = getRoundedCGFloat(for: allFoodsForRestaurant.first!.calories, roundedTo: 50)
+        calSlider.maxValue = getRoundedCGFloat(for: allFoodsForRestaurant.last!.calories, roundedTo: 50)
+        calSlider.selectedMinValue = calSlider.minValue
+        calSlider.selectedMaxValue = calSlider.maxValue
+        
+        allFoodsForRestaurant = allFoodsForRestaurant.sorted(byKeyPath: "protein", ascending: true)
+        proteinSlider.minValue = getRoundedCGFloat(for: allFoodsForRestaurant.first!.protein, roundedTo: 10)
+        proteinSlider.maxValue = getRoundedCGFloat(for: allFoodsForRestaurant.last!.protein, roundedTo: 10)
+        proteinSlider.selectedMinValue = proteinSlider.minValue
+        proteinSlider.selectedMaxValue = proteinSlider.maxValue
+        
+        allFoodsForRestaurant = allFoodsForRestaurant.sorted(byKeyPath: "fat", ascending: true)
+        fatSlider.minValue = getRoundedCGFloat(for: allFoodsForRestaurant.first!.fat, roundedTo: 10)
+        fatSlider.maxValue = getRoundedCGFloat(for: allFoodsForRestaurant.last!.fat, roundedTo: 10)
+        fatSlider.selectedMinValue = fatSlider.minValue
+        fatSlider.selectedMaxValue = fatSlider.maxValue
+        
+        allFoodsForRestaurant = allFoodsForRestaurant.sorted(byKeyPath: "carbohydrates", ascending: true)
+        carbSlider.minValue = getRoundedCGFloat(for: allFoodsForRestaurant.first!.carbohydrates, roundedTo: 10)
+        carbSlider.maxValue = getRoundedCGFloat(for: allFoodsForRestaurant.last!.carbohydrates, roundedTo: 10)
+        carbSlider.selectedMinValue = carbSlider.minValue
+        carbSlider.selectedMaxValue = carbSlider.maxValue
+        
+        gfSwitch.setOn(false, animated: true)
+        vegetarianSwitch.setOn(false, animated: true)
     }
     
     

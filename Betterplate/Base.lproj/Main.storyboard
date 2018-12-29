@@ -457,7 +457,7 @@
                                             <color key="titleColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="viewMenuButtonPressed:" destination="gvm-kD-LAA" eventType="touchUpInside" id="B7D-Ud-3aO"/>
+                                            <action selector="searchResetButtonPressed:" destination="gvm-kD-LAA" eventType="touchUpInside" id="xwi-h1-wlP"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-gp-i5o">
@@ -628,6 +628,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-th-606">
                                         <rect key="frame" x="310" y="697" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="vegetarianButtonToggled:" destination="gvm-kD-LAA" eventType="valueChanged" id="5v5-Nw-YMd"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gluten Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOQ-TL-xk4">
                                         <rect key="frame" x="16" y="741" width="93.666666666666671" height="21"/>
@@ -638,6 +641,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ck-YQ-ihO">
                                         <rect key="frame" x="310" y="736" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="gfButtonToggled:" destination="gvm-kD-LAA" eventType="valueChanged" id="ybe-Vz-Evs"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Results: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBA-H0-pr4">
                                         <rect key="frame" x="16" y="783" width="343" height="20"/>
@@ -652,7 +658,7 @@
                                             <color key="titleColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="viewMenuButtonPressed:" destination="gvm-kD-LAA" eventType="touchUpInside" id="iYr-NA-LF7"/>
+                                            <action selector="advancedSearchButtonPressed:" destination="gvm-kD-LAA" eventType="touchUpInside" id="jK5-EA-Ph7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -739,13 +745,21 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="advancedSearchButton" destination="whi-4w-3Mf" id="4r0-R1-h4l"/>
+                        <outlet property="advancedSearchResultsLabel" destination="YBA-H0-pr4" id="lKm-Yz-kbK"/>
+                        <outlet property="calSlider" destination="QCG-L2-S7g" id="G73-37-Ia7"/>
+                        <outlet property="carbSlider" destination="PWh-0A-9uE" id="nAl-xr-WDq"/>
+                        <outlet property="fatSlider" destination="58M-ff-f2C" id="k9G-dC-QuL"/>
+                        <outlet property="gfSwitch" destination="7ck-YQ-ihO" id="hjs-Fd-B6Q"/>
                         <outlet property="headerImage" destination="2fa-6x-3nF" id="Zbc-wz-bxU"/>
                         <outlet property="healthierPicksTable" destination="RfB-gp-i5o" id="kIJ-Ws-u8l"/>
                         <outlet property="healthierPicksTableHeightConstraint" destination="PDI-j3-rdq" id="zuD-t8-jMd"/>
                         <outlet property="isFavoritedBarButton" destination="8nd-l0-xbl" id="etL-lJ-sRM"/>
                         <outlet property="mainScrollView" destination="3il-ud-v2w" id="xO2-wa-rCP"/>
-                        <outlet property="rangeSlider" destination="QCG-L2-S7g" id="G73-37-Ia7"/>
+                        <outlet property="proteinSlider" destination="qxg-Sk-Ayl" id="MBU-B7-umU"/>
+                        <outlet property="resetButton" destination="D2Z-Cb-DbL" id="0rn-DV-Gfb"/>
                         <outlet property="restaurantTitle" destination="BJo-qv-KnP" id="LNB-mF-vo9"/>
+                        <outlet property="vegetarianSwitch" destination="ccB-th-606" id="TNu-p3-dXg"/>
                         <segue destination="JpR-tB-9ew" kind="show" identifier="restaurantOverviewToMenusSegue" id="XOx-MT-VXb"/>
                         <segue destination="hEJ-5B-CRU" kind="show" identifier="healthyPicksToFoodDetailsSegue" id="ePC-Ff-IGG"/>
                     </connections>

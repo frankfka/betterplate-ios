@@ -19,7 +19,7 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     var foods: Results<Food>?
     var foodsToSearchFrom: Results<Food>?
-    var selectedSortType: Int = FoodService.SORT_BY_ALPHABETICAL
+    var selectedSortType: FoodSortType = .SORT_BY_ALPHABETICAL
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,23 +101,23 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
         let menuManager = PopMenuManager.default
         menuManager.popMenuAppearance.popMenuCornerRadius = CGFloat(integerLiteral: 4)
         let alphabeticalSort = PopMenuDefaultAction(title: "Alphabetical") { (action) in
-            self.selectedSortType = FoodService.SORT_BY_ALPHABETICAL
+            self.selectedSortType = .SORT_BY_ALPHABETICAL
             self.loadFoods()
         }
         let caloriesSort = PopMenuDefaultAction(title: "Calories (Low to High)") { (action) in
-            self.selectedSortType = FoodService.SORT_BY_INC_CAL
+            self.selectedSortType = .SORT_BY_INC_CAL
             self.loadFoods()
         }
         let proteinSort = PopMenuDefaultAction(title: "Protein (High to Low)") { (action) in
-            self.selectedSortType = FoodService.SORT_BY_DEC_PROTEIN
+            self.selectedSortType = .SORT_BY_DEC_PROTEIN
             self.loadFoods()
         }
         let carbSort = PopMenuDefaultAction(title: "Carbohydrates (Low to High)") { (action) in
-            self.selectedSortType = FoodService.SORT_BY_INC_CARBS
+            self.selectedSortType = .SORT_BY_INC_CARBS
             self.loadFoods()
         }
         let fatSort = PopMenuDefaultAction(title: "Fat (Low to High)") { (action) in
-            self.selectedSortType = FoodService.SORT_BY_INC_FAT
+            self.selectedSortType = .SORT_BY_INC_FAT
             self.loadFoods()
         }
         menuManager.actions = [alphabeticalSort, caloriesSort, proteinSort, carbSort, fatSort]
