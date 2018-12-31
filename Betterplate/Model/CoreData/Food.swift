@@ -33,6 +33,14 @@ class Food: Object {
     @objc dynamic var isGF: Int = 0
     @objc dynamic var isFeatured: Int = 0
     
+    // Ignored Property - Healthscore (read only properties automatically ignored)
+    var healthScore: Double {
+        return 0.710 - 0.0538*fat - 0.423*saturatedFat
+            - 0.00398*cholesterol - 0.00254*sodium - 0.0300*carbohydrates
+            + 0.561*fiber - 0.0245*sugar + 0.123*protein
+            + 0.0234*vitaminA + 0.00399*vitaminC + 0.0137*calcium - 0.0186*iron
+    }
+
     override static func primaryKey() -> String? {
         return "foodId"
     }

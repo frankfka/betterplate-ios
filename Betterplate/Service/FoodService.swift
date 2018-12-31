@@ -23,6 +23,11 @@ public class FoodService {
         } else if sortType == .SORT_BY_INC_FAT {
             return foodList.sorted(byKeyPath: "fat", ascending: true)
         }
+        
+//        else if sortType == .SORT_BY_DEC_HEALTH {
+//            return foodList.sorted(byKeyPath: "healthScore", ascending: false)
+//        }
+        
         return foodList
     }
     
@@ -67,4 +72,5 @@ enum FoodSortType {
     case SORT_BY_DEC_PROTEIN
     case SORT_BY_INC_CARBS
     case SORT_BY_INC_FAT
+    case SORT_BY_DEC_HEALTH
 }

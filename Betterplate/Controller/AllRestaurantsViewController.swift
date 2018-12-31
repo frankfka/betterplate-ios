@@ -55,22 +55,31 @@ class AllRestaurantsViewController: UITableViewController, UISearchBarDelegate {
     }
     
     //MARK: - Search bar methods
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if (searchBar.text != nil) && searchBar.text!.count > 0 {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count > 0 {
             restaurants = restaurantsToSearchFrom?.filter("restaurantName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "restaurantName", ascending: true)
             tableView.reloadData()
+        } else {
+            getAllRestaurants()
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count == 0  {
-            getAllRestaurants()
-            // This grabs the main thread, where UI changes should be persisted
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        getAllRestaurants()
+        searchBar.resignFirstResponder()
     }
 
 }

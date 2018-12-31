@@ -41,16 +41,17 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
     
     private func loadFoods() {
         
-        // Retrieve foods from menu or get all (and filter if filters are given)
         let foodService = FoodService()
         let restaurantService = RestaurantService()
+        
+        // Retrieve foods from menu or get all (and filter if filters are given)
         if let menuId = parentMenuId {
+            
             navItem.title = realm.objects(Menu.self).filter("menuId == \(menuId)")[0].menuName
-            // TODO: this is ugly, refactor when you have time
             foods = MenuService().getFoods(for: menuId)
             foodsToSearchFrom = MenuService().getFoods(for: menuId)
-        } else if let restaurantId = parentRestaurantId {
             
+        } else if let restaurantId = parentRestaurantId {
             if let searchFilters = foodFilters {
                 navItem.title = "Search Results"
                 foods = foodService.filterFoods(for: restaurantService.getAllFoods(for: restaurantId), with: searchFilters)
@@ -60,8 +61,8 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
                 foods = restaurantService.getAllFoods(for: restaurantId)
                 foodsToSearchFrom = restaurantService.getAllFoods(for: restaurantId)
             }
-            
         }
+        
         foods = foodService.sortFoods(for: foods!, with: selectedSortType)
         foodsToSearchFrom = foodService.sortFoods(for: foodsToSearchFrom!, with: selectedSortType)
         tableView.reloadData()
@@ -91,28 +92,39 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
     }
     
     //MARK: - Search bar methods
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if (searchBar.text != nil) && searchBar.text!.count > 0 {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count > 0 {
             foods = foodsToSearchFrom?.filter("foodName CONTAINS[cd] %@", searchBar.text!)
             tableView.reloadData()
+        } else {
+            loadFoods()
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count == 0  {
-            loadFoods()
-            // This grabs the main thread, where UI changes should be persisted
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        loadFoods()
+        searchBar.resignFirstResponder()
     }
     
     //MARK: - Sorting method
     @IBAction func onSortButtonPressed(_ sender: UIBarButtonItem) {
         let menuManager = PopMenuManager.default
         menuManager.popMenuAppearance.popMenuCornerRadius = CGFloat(integerLiteral: 4)
+        // Disable scrolling using the below
+        menuManager.popMenuAppearance.popMenuActionCountForScrollable = UInt(exactly: 6)!
         let alphabeticalSort = PopMenuDefaultAction(title: "Alphabetical") { (action) in
             self.selectedSortType = .SORT_BY_ALPHABETICAL
             self.loadFoods()
@@ -133,6 +145,12 @@ class FoodsViewController: UITableViewController, UISearchBarDelegate {
             self.selectedSortType = .SORT_BY_INC_FAT
             self.loadFoods()
         }
+//        let healthSort = PopMenuDefaultAction(title: "Healthiness (High to Low)") { (action) in
+//            self.selectedSortType = .SORT_BY_DEC_HEALTH
+//            self.loadFoods()
+//        }
+        // TODO find a way to add healthSort
+        
         menuManager.actions = [alphabeticalSort, caloriesSort, proteinSort, carbSort, fatSort]
         menuManager.present()
     }
