@@ -19,6 +19,10 @@ class RealmConfig {
     }
     
     static func userDataConfig() -> Realm.Configuration {
+        // The following is for empty Realm data initialization
+//        print(foodDataConfig().fileURL?.absoluteString)
+//        return foodDataConfig();
+        
         return Realm.Configuration(objectTypes: [CurrentMealItem.self, FavoriteRestaurant.self])
     }
     
