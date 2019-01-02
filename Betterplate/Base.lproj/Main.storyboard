@@ -1235,7 +1235,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXX-Y5-dzP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="399"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="451"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eat Healthy. Anywhere. Anytime." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ann-TN-2gG">
                                                 <rect key="frame" x="84.000000000000014" y="371" width="246.33333333333337" height="20"/>
@@ -1287,6 +1287,17 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3f-n5-joT">
+                                                <rect key="frame" x="155" y="399" width="104" height="36"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="tintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Contact Us">
+                                                    <color key="titleColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactButtonPressed:" destination="PAD-dv-FFn" eventType="touchUpInside" id="c7Y-UK-bmw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1294,11 +1305,12 @@
                                             <constraint firstAttribute="trailing" secondItem="DgQ-6S-Qdr" secondAttribute="trailing" constant="16" id="65s-td-inq"/>
                                             <constraint firstItem="aOM-OS-129" firstAttribute="leading" secondItem="WXX-Y5-dzP" secondAttribute="leading" id="6Qx-8n-0lh"/>
                                             <constraint firstItem="FbO-Iv-yLA" firstAttribute="leading" secondItem="WXX-Y5-dzP" secondAttribute="leading" constant="16" id="7SG-HU-ZmA"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ann-TN-2gG" secondAttribute="bottom" constant="8" id="9ai-BX-r3I"/>
                                             <constraint firstItem="ORA-OL-zAs" firstAttribute="leading" secondItem="WXX-Y5-dzP" secondAttribute="leading" id="Ave-eK-v4m"/>
                                             <constraint firstItem="DgQ-6S-Qdr" firstAttribute="leading" secondItem="WXX-Y5-dzP" secondAttribute="leading" constant="16" id="Cs1-N5-e3y"/>
+                                            <constraint firstAttribute="bottom" secondItem="k3f-n5-joT" secondAttribute="bottom" constant="16" id="E4u-Kn-vnc"/>
                                             <constraint firstItem="dGx-Rr-ifs" firstAttribute="top" secondItem="DgQ-6S-Qdr" secondAttribute="bottom" constant="32" id="P9U-dp-JwC"/>
                                             <constraint firstItem="Ann-TN-2gG" firstAttribute="top" secondItem="KeH-sk-5Ta" secondAttribute="bottom" constant="64" id="Pct-iR-BSR"/>
+                                            <constraint firstItem="k3f-n5-joT" firstAttribute="top" secondItem="Ann-TN-2gG" secondAttribute="bottom" constant="8" id="VmI-MG-bdb"/>
                                             <constraint firstItem="ORA-OL-zAs" firstAttribute="top" secondItem="FbO-Iv-yLA" secondAttribute="bottom" constant="4" id="XFf-WQ-eSs"/>
                                             <constraint firstAttribute="trailing" secondItem="L98-6R-hEM" secondAttribute="trailing" constant="16" id="XHQ-Bn-aYk"/>
                                             <constraint firstItem="dGx-Rr-ifs" firstAttribute="leading" secondItem="WXX-Y5-dzP" secondAttribute="leading" constant="16" id="Z3v-tx-nqS"/>
@@ -1309,6 +1321,7 @@
                                             <constraint firstItem="aOM-OS-129" firstAttribute="top" secondItem="L98-6R-hEM" secondAttribute="bottom" constant="4" id="kMx-QR-7xz"/>
                                             <constraint firstItem="Ann-TN-2gG" firstAttribute="centerX" secondItem="WXX-Y5-dzP" secondAttribute="centerX" id="lxo-Md-807"/>
                                             <constraint firstAttribute="trailing" secondItem="dGx-Rr-ifs" secondAttribute="trailing" constant="16" id="pmS-sJ-YGA"/>
+                                            <constraint firstItem="k3f-n5-joT" firstAttribute="centerX" secondItem="WXX-Y5-dzP" secondAttribute="centerX" id="q9L-Au-ZDm"/>
                                             <constraint firstItem="L98-6R-hEM" firstAttribute="top" secondItem="dGx-Rr-ifs" secondAttribute="bottom" id="ryb-eg-Toz"/>
                                             <constraint firstItem="KeH-sk-5Ta" firstAttribute="top" secondItem="aOM-OS-129" secondAttribute="bottom" id="xH6-1z-4OI"/>
                                             <constraint firstItem="L98-6R-hEM" firstAttribute="leading" secondItem="WXX-Y5-dzP" secondAttribute="leading" constant="16" id="yGM-c8-bB3"/>
@@ -1446,8 +1459,8 @@
         <image name="restaurants_primary" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kt8-lj-ckf"/>
+        <segue reference="7xv-Mc-Ip0"/>
         <segue reference="UiM-bu-GGc"/>
-        <segue reference="ke7-MG-VOk"/>
+        <segue reference="Dsf-ZG-UAP"/>
     </inferredMetricsTieBreakers>
 </document>

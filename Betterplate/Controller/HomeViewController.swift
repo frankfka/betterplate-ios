@@ -8,8 +8,10 @@
 
 import UIKit
 import RealmSwift
+import SVProgressHUD
+import MessageUI
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var favoriteRestaurantsTable: UITableView!
     @IBOutlet weak var favoriteRestaurantsHeight: NSLayoutConstraint!
@@ -117,6 +119,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: - Contact Button
+    @IBAction func contactButtonPressed(_ sender: UIButton) {
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            SVProgressHUD.showError(withStatus: "Mail Services are Not Available")
+            SVProgressHUD.dismiss(withDelay: TimeInterval(exactly: 2)!)
+            return
+        }
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        
+        // Configure the fields of the interface.
+        composeVC.setToRecipients(["frank@betterplate.app"])
+        composeVC.setSubject("Betterplate Feedback")
+        composeVC.setMessageBody("", isHTML: false)
+        
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
 
 }
 
