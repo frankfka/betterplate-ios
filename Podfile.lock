@@ -2,6 +2,9 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
   - NewPopMenu (2.1.1)
   - RangeSeekSlider (1.7.0)
   - Realm (3.12.0):
@@ -13,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Charts
   - NewPopMenu
   - RangeSeekSlider
   - RealmSwift
@@ -20,6 +24,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - NewPopMenu
     - RangeSeekSlider
     - Realm
@@ -37,12 +42,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
   NewPopMenu: 60d67846a401964dcaa51bffb792f04f6fe2fc76
   RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ffb6d463e9f833d4ec357b567c66f1f201acef9f
+PODFILE CHECKSUM: cd21c5a8e10ff0a8fc24336b51ac8e3f973d433d
 
 COCOAPODS: 1.5.3

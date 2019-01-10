@@ -11,52 +11,78 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="70" id="mrP-Of-nIQ" customClass="FoodCell" customModule="Betterplate" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="100" id="mrP-Of-nIQ" customClass="FoodCell" customModule="Betterplate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrP-Of-nIQ" id="ZcM-ec-A7e">
-                <rect key="frame" x="0.0" y="0.0" width="341" height="69.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="102.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUA-ET-6Cp">
-                        <rect key="frame" x="16" y="12" width="309" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-td-Wcv">
-                        <rect key="frame" x="16" y="37" width="309" height="19"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                        <color key="textColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcQ-he-uec">
-                        <rect key="frame" x="16" y="58" width="309" height="0.0"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-53-gzE">
+                        <rect key="frame" x="16" y="30.5" width="309" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUA-ET-6Cp">
+                                <rect key="frame" x="0.0" y="0.0" width="309" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcQ-he-uec">
+                                <rect key="frame" x="0.0" y="42" width="309" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uX-KG-D4m">
+                                <rect key="frame" x="0.0" y="42" width="309" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-td-Wcv">
+                                <rect key="frame" x="0.0" y="23" width="309" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LM3-td-Wcv" firstAttribute="leading" secondItem="Jwv-53-gzE" secondAttribute="leading" id="0Uc-vh-rSc"/>
+                            <constraint firstAttribute="trailing" secondItem="LM3-td-Wcv" secondAttribute="trailing" id="32l-am-QCb"/>
+                            <constraint firstItem="3uX-KG-D4m" firstAttribute="leading" secondItem="Jwv-53-gzE" secondAttribute="leading" id="CM1-5Z-ccZ"/>
+                            <constraint firstItem="dUA-ET-6Cp" firstAttribute="top" secondItem="Jwv-53-gzE" secondAttribute="top" id="FaF-Af-Nco"/>
+                            <constraint firstItem="dUA-ET-6Cp" firstAttribute="leading" secondItem="Jwv-53-gzE" secondAttribute="leading" id="JME-jA-scy"/>
+                            <constraint firstItem="TcQ-he-uec" firstAttribute="top" secondItem="LM3-td-Wcv" secondAttribute="bottom" id="NV9-Gq-dRy"/>
+                            <constraint firstItem="TcQ-he-uec" firstAttribute="leading" secondItem="Jwv-53-gzE" secondAttribute="leading" id="QwL-tL-1r6"/>
+                            <constraint firstItem="LM3-td-Wcv" firstAttribute="top" secondItem="dUA-ET-6Cp" secondAttribute="bottom" constant="2" id="RVJ-dT-pJe"/>
+                            <constraint firstItem="TcQ-he-uec" firstAttribute="top" secondItem="LM3-td-Wcv" secondAttribute="bottom" id="YDy-Qc-EE3"/>
+                            <constraint firstAttribute="trailing" secondItem="dUA-ET-6Cp" secondAttribute="trailing" id="a55-Kt-7oq"/>
+                            <constraint firstAttribute="trailing" secondItem="3uX-KG-D4m" secondAttribute="trailing" id="fOM-NU-ZSt"/>
+                            <constraint firstItem="3uX-KG-D4m" firstAttribute="top" secondItem="TcQ-he-uec" secondAttribute="bottom" id="kmc-VX-UQB"/>
+                            <constraint firstAttribute="bottom" secondItem="3uX-KG-D4m" secondAttribute="bottom" id="lcr-t0-cco"/>
+                            <constraint firstAttribute="trailing" secondItem="TcQ-he-uec" secondAttribute="trailing" id="mUN-eR-doS"/>
+                            <constraint firstItem="LM3-td-Wcv" firstAttribute="top" secondItem="dUA-ET-6Cp" secondAttribute="bottom" constant="2" id="t64-7Q-EY2"/>
+                            <constraint firstItem="3uX-KG-D4m" firstAttribute="top" secondItem="TcQ-he-uec" secondAttribute="bottom" id="tWG-aL-coQ"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="LM3-td-Wcv" secondAttribute="trailing" constant="16" id="Col-AQ-11L"/>
-                    <constraint firstItem="LM3-td-Wcv" firstAttribute="leading" secondItem="ZcM-ec-A7e" secondAttribute="leading" constant="16" id="Hho-EF-Yq9"/>
-                    <constraint firstAttribute="bottom" secondItem="TcQ-he-uec" secondAttribute="bottom" constant="11.5" id="RmA-2q-LZf"/>
-                    <constraint firstAttribute="trailing" secondItem="dUA-ET-6Cp" secondAttribute="trailing" constant="16" id="hyE-Gf-QmS"/>
-                    <constraint firstItem="dUA-ET-6Cp" firstAttribute="leading" secondItem="ZcM-ec-A7e" secondAttribute="leading" constant="16" id="k5v-gv-887"/>
-                    <constraint firstItem="TcQ-he-uec" firstAttribute="trailing" secondItem="LM3-td-Wcv" secondAttribute="trailing" id="kF3-1c-sLs"/>
-                    <constraint firstItem="TcQ-he-uec" firstAttribute="leading" secondItem="LM3-td-Wcv" secondAttribute="leading" id="oa4-1J-zFM"/>
-                    <constraint firstItem="TcQ-he-uec" firstAttribute="top" secondItem="LM3-td-Wcv" secondAttribute="bottom" constant="2" id="rnq-Zd-aAG"/>
-                    <constraint firstItem="LM3-td-Wcv" firstAttribute="top" secondItem="dUA-ET-6Cp" secondAttribute="bottom" constant="4" id="t08-tf-gkv"/>
-                    <constraint firstItem="dUA-ET-6Cp" firstAttribute="top" secondItem="ZcM-ec-A7e" secondAttribute="top" constant="12" id="zzS-S6-XOP"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jwv-53-gzE" secondAttribute="bottom" priority="250" constant="13.5" id="06h-aP-zw3"/>
+                    <constraint firstItem="Jwv-53-gzE" firstAttribute="centerY" secondItem="ZcM-ec-A7e" secondAttribute="centerY" id="MlP-XX-UDn"/>
+                    <constraint firstItem="Jwv-53-gzE" firstAttribute="leading" secondItem="ZcM-ec-A7e" secondAttribute="leading" constant="16" id="Xce-9u-tX9"/>
+                    <constraint firstAttribute="trailing" secondItem="Jwv-53-gzE" secondAttribute="trailing" constant="16" id="g0X-gU-IjB"/>
+                    <constraint firstItem="Jwv-53-gzE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZcM-ec-A7e" secondAttribute="top" priority="250" constant="13.5" id="vLR-VC-8aq"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
             <connections>
                 <outlet property="foodNameLabel" destination="dUA-ET-6Cp" id="a0W-be-33o"/>
+                <outlet property="healthWarningLabel" destination="3uX-KG-D4m" id="diI-qy-TfG"/>
                 <outlet property="nutritionLabel" destination="LM3-td-Wcv" id="3LX-kc-pR6"/>
                 <outlet property="servingLabel" destination="TcQ-he-uec" id="0dF-JO-2kd"/>
             </connections>
-            <point key="canvasLocation" x="154.40000000000001" y="335.5322338830585"/>
+            <point key="canvasLocation" x="154.40000000000001" y="350.37481259370315"/>
         </tableViewCell>
     </objects>
 </document>

@@ -11,7 +11,11 @@ import RealmSwift
 
 public class FoodService {
     
+    // Sorts a list of foods given a sort type
     func sortFoods(for foodList: Results<Food>, with sortType: FoodSortType) -> Results<Food> {
+        
+        // Compare & use the relevant property name
+        // TODO - might want to store these property names in a constants class so they stay consistent if anything changes
         if sortType == .SORT_BY_ALPHABETICAL {
             return foodList.sorted(byKeyPath: "foodName", ascending: true)
         } else if sortType == .SORT_BY_INC_CAL {
@@ -24,6 +28,7 @@ public class FoodService {
             return foodList.sorted(byKeyPath: "fat", ascending: true)
         }
         
+        // Cannot sort Realm by a non-property, so a workaround must be found
 //        else if sortType == .SORT_BY_DEC_HEALTH {
 //            return foodList.sorted(byKeyPath: "healthScore", ascending: false)
 //        }
@@ -31,9 +36,10 @@ public class FoodService {
         return foodList
     }
     
+    // Filters a list of foods given a dictionary of parameters
     func filterFoods(for foodList: Results<Food>, with filters: Dictionary<FoodFilters, String>) -> Results<Food> {
         
-        //TODO temp workaround until sqlite structure is changed
+        // Convert boolean values to 1 & 0
         var wantsGF = 0
         var wantsVeg = 0
         if Bool(filters[.WANTS_GF]!)! {
@@ -43,16 +49,40 @@ public class FoodService {
             wantsVeg = 1
         }
         
+        // Construct the filter query
         let filterString = "(isGF == \(wantsGF)) AND (isVegetarian == \(wantsVeg)) AND "
             + "(calories <= \(filters[.MAX_CALS]!)) AND (calories >= \(filters[.MIN_CALS]!)) AND "
             + "(fat <= \(filters[.MAX_FAT]!)) AND (fat >= \(filters[.MIN_FAT]!)) AND "
             + "(carbohydrates <= \(filters[.MAX_CARBS]!)) AND (carbohydrates >= \(filters[.MIN_CARBS]!)) AND "
             + "(protein <= \(filters[.MAX_PROTEIN]!)) AND (protein >= \(filters[.MIN_PROTEIN]!))"
         return foodList.filter(filterString)
+    
+    }
+    
+    // Returns a formatted string with the health warnings for a particular food, with new lines between each warning
+    // Returns nil if no health warnings exist -> easier to check whether we need to update UI
+    func getHealthWarnings(for food: Food) -> String? {
+        
+        var warningString = ""
+        if food.calories >= 1100 {
+            warningString += "High in Calories\n"
+        }
+        if food.sodium >= 1200 {
+            warningString += "High in Sodium\n"
+        }
+        if food.sugar >= 20 {
+            warningString += "High in Sugar\n"
+        }
+        if food.transFat >= 1 {
+            warningString += "High in Trans Fat\n"
+        }
+        warningString = warningString.trimmingCharacters(in: .whitespacesAndNewlines)
+        return warningString.count > 0 ? warningString : nil
     }
     
 }
 
+// Enums for filter/sort comparison
 enum FoodFilters {
     case MIN_CALS
     case MAX_CALS
