@@ -950,6 +950,9 @@
             rgba[3] = 1.0f;
             break;
         }
+        case kCGColorSpaceModelXYZ:
+        // Not handled by Chameleon
+        break;
     }
 }
 

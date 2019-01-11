@@ -26,7 +26,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8v-4x-DzG">
-                        <rect key="frame" x="16" y="11" width="269" height="30.5"/>
+                        <rect key="frame" x="16" y="16" width="269" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -35,10 +35,11 @@
                 <constraints>
                     <constraint firstItem="z8v-4x-DzG" firstAttribute="leading" secondItem="cDc-nM-Dy4" secondAttribute="leading" constant="16" id="0Sl-Gc-OTd"/>
                     <constraint firstItem="ptl-lf-d9z" firstAttribute="centerY" secondItem="cDc-nM-Dy4" secondAttribute="centerY" id="29y-QC-tmg"/>
+                    <constraint firstItem="z8v-4x-DzG" firstAttribute="centerY" secondItem="cDc-nM-Dy4" secondAttribute="centerY" id="8dE-6Q-b1w"/>
                     <constraint firstItem="ptl-lf-d9z" firstAttribute="trailing" secondItem="cDc-nM-Dy4" secondAttribute="trailingMargin" constant="4" id="Fla-O7-yTi"/>
-                    <constraint firstAttribute="bottom" secondItem="z8v-4x-DzG" secondAttribute="bottom" constant="11" id="TK5-C5-ql4"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="z8v-4x-DzG" secondAttribute="bottom" constant="16" id="TK5-C5-ql4"/>
                     <constraint firstItem="ptl-lf-d9z" firstAttribute="leading" secondItem="z8v-4x-DzG" secondAttribute="trailing" constant="16" id="ksY-rG-7dB"/>
-                    <constraint firstItem="z8v-4x-DzG" firstAttribute="top" secondItem="cDc-nM-Dy4" secondAttribute="top" constant="11" id="mnZ-xQ-2oe"/>
+                    <constraint firstItem="z8v-4x-DzG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cDc-nM-Dy4" secondAttribute="top" constant="16" id="mnZ-xQ-2oe"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="tintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
