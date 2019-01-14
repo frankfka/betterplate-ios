@@ -80,6 +80,32 @@ public class FoodService {
         return warningString.count > 0 ? warningString : nil
     }
     
+    // Returns the macronutrient breakdown for a list of foods as a dictionary
+    func getMacrosInPercent(for foods: [Food]) -> [Macronutrient: Double] {
+        
+        var macrosDict: [Macronutrient: Double] = [Macronutrient.CARBS: 0, Macronutrient.FAT: 0, Macronutrient.PROTEIN: 0]
+        var totalCals = 0.0
+        var totalCarbs = 0.0
+        var totalProtein = 0.0
+        var totalFat = 0.0
+        
+        for food in foods {
+            let calsFromCarbs = food.carbohydrates * 4
+            let calsFromProtein = food.protein * 4
+            let calsFromFat = food.fat * 9
+            totalCarbs = totalCarbs + calsFromCarbs
+            totalFat = totalFat + calsFromFat
+            totalProtein = totalProtein + calsFromProtein
+            totalCals = totalCals + (calsFromFat + calsFromCarbs + calsFromProtein)
+        }
+        
+        macrosDict[Macronutrient.CARBS] = totalCarbs / totalCals
+        macrosDict[Macronutrient.FAT] = totalFat / totalCals
+        macrosDict[Macronutrient.PROTEIN] = totalProtein / totalCals
+        
+        return macrosDict
+    }
+    
 }
 
 // Enums for filter/sort comparison
@@ -103,4 +129,10 @@ enum FoodSortType {
     case SORT_BY_INC_CARBS
     case SORT_BY_INC_FAT
     case SORT_BY_DEC_HEALTH
+}
+
+enum Macronutrient {
+    case CARBS
+    case PROTEIN
+    case FAT
 }
