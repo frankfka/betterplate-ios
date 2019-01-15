@@ -23,6 +23,13 @@ class FoodCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    // This clears the labels so that the dequed cell does not perserve
+    // its state and affect display of other cells
+    override func prepareForReuse() {
+        servingLabel.text = ""
+        healthWarningLabel.text = ""
+    }
+    
     // Update the UI for a given food
     func updateLabels(for food: Food) {
         
