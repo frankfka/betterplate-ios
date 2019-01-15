@@ -8,12 +8,14 @@
 
 import UIKit
 import RangeSeekSlider
+import Charts
 
 class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var itemsInMeal: [Food] = []
     let mealService = CurrentMealService()
     let viewHelper = ViewHelperService()
+    let foodService = FoodService()
     @IBOutlet weak var emptyMealHelpLabel: UILabel!
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var mealItemsTable: UITableView!
@@ -35,6 +37,9 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var ironLabel: UILabel!
     @IBOutlet weak var vitALabel: UILabel!
     @IBOutlet weak var vitCLabel: UILabel!
+    // Nutrition pie chart
+    @IBOutlet weak var pieChart: PieChartView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,6 +145,18 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         ironLabel.text = "\(mealNutrition[CurrentMealService.iron] ?? 0) %"
         vitALabel.text = "\(mealNutrition[CurrentMealService.vitaminA] ?? 0) %"
         vitCLabel.text = "\(mealNutrition[CurrentMealService.vitaminC] ?? 0) %"
+        
+        // Show nutrition breakdown if meal list is not empty
+        pieChart.noDataFont = UIFont (name: "HelveticaNeue-Light", size: 16)
+        pieChart.noDataText = "Add items to your meal to see the macronutrient breakdown."
+        if itemsInMeal.count > 0 {
+            let macros = foodService.getMacrosInPercent(for: itemsInMeal)
+            viewHelper.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
+        } else {
+            // Reset chart, Charts will display "No chart data available"
+            pieChart.data = nil
+        }
+        
     }
     
 }

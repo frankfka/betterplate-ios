@@ -81,9 +81,14 @@ class FoodDetailViewController: UIViewController {
         vitALabel.text = "\(food.vitaminA) %"
         vitCLabel.text = "\(food.vitaminC) %"
         
-        // Populate chart
-        let macros = foodService.getMacrosInPercent(for: [food])
-        viewService.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
+        // Populate chart only if there are calories
+        pieChart.noDataFont = UIFont (name: "HelveticaNeue-Light", size: 16)
+        pieChart.noDataText = "This item has no macronutrients."
+        if food.calories >= 4 {
+            let macros = foodService.getMacrosInPercent(for: [food])
+            viewService.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
+        }
+        // Else do nothing, Charts will display "No data available"
         
     }
 }
