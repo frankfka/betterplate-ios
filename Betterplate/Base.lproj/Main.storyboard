@@ -427,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojE-kS-7O5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.565217391304358" y="984.78260869565224"/>
+            <point key="canvasLocation" x="394" y="1214"/>
         </scene>
         <!--Restaurant Overview View Controller-->
         <scene sceneID="UTh-6z-VFU">
@@ -437,7 +437,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3il-ud-v2w">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3il-ud-v2w">
                                 <rect key="frame" x="0.0" y="64" width="414" height="887"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-6x-3nF">
@@ -495,7 +495,7 @@
                                             <constraint firstAttribute="height" constant="10" id="PDI-j3-rdq"/>
                                         </constraints>
                                     </tableView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QCG-L2-S7g" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCG-L2-S7g" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                         <rect key="frame" x="107" y="437" width="291" height="65"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -527,7 +527,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxg-Sk-Ayl" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxg-Sk-Ayl" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                         <rect key="frame" x="107" y="502" width="291" height="65"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -559,13 +559,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Protein (g):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLZ-7h-yI4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein (g):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLZ-7h-yI4">
                                         <rect key="frame" x="16" y="524" width="87" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-0A-9uE" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-0A-9uE" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                         <rect key="frame" x="107" y="567" width="291" height="65"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -597,13 +597,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Carbs (g):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw1-gH-zT4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs (g):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw1-gH-zT4">
                                         <rect key="frame" x="16" y="589" width="87" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58M-ff-f2C" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58M-ff-f2C" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                         <rect key="frame" x="107" y="632" width="291" height="65"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -635,51 +635,51 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fat (g):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-9h-6b6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat (g):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-9h-6b6">
                                         <rect key="frame" x="16" y="654" width="87" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Vegetarian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXd-PH-2Fb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetarian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXd-PH-2Fb">
                                         <rect key="frame" x="16" y="702" width="87" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Calories:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-JD-VUk">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-JD-VUk">
                                         <rect key="frame" x="16" y="459" width="87" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-th-606">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-th-606">
                                         <rect key="frame" x="349" y="697" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="vegetarianButtonToggled:" destination="gvm-kD-LAA" eventType="valueChanged" id="5v5-Nw-YMd"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gluten Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOQ-TL-xk4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gluten Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOQ-TL-xk4">
                                         <rect key="frame" x="16" y="741" width="317" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ck-YQ-ihO">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ck-YQ-ihO">
                                         <rect key="frame" x="349" y="736" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.8980392157" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="gfButtonToggled:" destination="gvm-kD-LAA" eventType="valueChanged" id="ybe-Vz-Evs"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Number of Results: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBA-H0-pr4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Results: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBA-H0-pr4">
                                         <rect key="frame" x="16" y="783" width="382" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whi-4w-3Mf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whi-4w-3Mf">
                                         <rect key="frame" x="177.66666666666666" y="811" width="59" height="34"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Search">
@@ -766,11 +766,18 @@
                         <viewLayoutGuide key="safeArea" id="xee-Fk-JfU"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ue9-y5-bq4">
-                        <barButtonItem key="rightBarButtonItem" image="favorite_primary" id="8nd-l0-xbl">
-                            <connections>
-                                <action selector="favoriteBarButtonPressed:" destination="gvm-kD-LAA" id="6YT-pv-3DM"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="favorite_primary" id="8nd-l0-xbl">
+                                <connections>
+                                    <action selector="favoriteBarButtonPressed:" destination="gvm-kD-LAA" id="6YT-pv-3DM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Nearby" id="H5w-wq-Zgl">
+                                <connections>
+                                    <action selector="nearbyButtonPressed:" destination="gvm-kD-LAA" id="CYa-2V-hgD"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
@@ -792,11 +799,12 @@
                         <segue destination="JpR-tB-9ew" kind="show" identifier="restaurantOverviewToMenusSegue" id="XOx-MT-VXb"/>
                         <segue destination="hEJ-5B-CRU" kind="show" identifier="healthyPicksToFoodDetailsSegue" id="ePC-Ff-IGG"/>
                         <segue destination="s5C-lJ-jNe" kind="show" identifier="advancedSearchToFoodsSegue" id="UiM-bu-GGc"/>
+                        <segue destination="6J2-bl-fTS" kind="show" identifier="restaurantOverviewtoNearbySegue" id="qey-Ls-7Io"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYu-gk-7I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867" y="212"/>
+            <point key="canvasLocation" x="1963.7681159420292" y="52.989130434782609"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="k32-np-U4B">
@@ -852,7 +860,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0b-dy-R3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="-302"/>
+            <point key="canvasLocation" x="2741" y="-296"/>
         </scene>
         <!--Menu-->
         <scene sceneID="KBH-GB-xC1">
@@ -893,7 +901,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCB-S9-Ygv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="212"/>
+            <point key="canvasLocation" x="3784" y="280"/>
         </scene>
         <!--Food Detail View Controller-->
         <scene sceneID="Vfc-qq-lKi">
@@ -1427,6 +1435,42 @@
             </objects>
             <point key="canvasLocation" x="-343.47826086956525" y="-413.31521739130437"/>
         </scene>
+        <!--Nearby-->
+        <scene sceneID="qyi-J1-1ry">
+            <objects>
+                <viewController id="6J2-bl-fTS" customClass="NearbyRestaurantViewController" customModule="Betterplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cst-G0-SMd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cen-5V-FRA">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F0M-nJ-tjA" firstAttribute="trailing" secondItem="cen-5V-FRA" secondAttribute="trailing" id="16K-nN-Pr1"/>
+                            <constraint firstItem="cen-5V-FRA" firstAttribute="top" secondItem="F0M-nJ-tjA" secondAttribute="top" id="ecO-Bg-XUG"/>
+                            <constraint firstItem="cen-5V-FRA" firstAttribute="leading" secondItem="F0M-nJ-tjA" secondAttribute="leading" id="mqb-yk-DCT"/>
+                            <constraint firstItem="F0M-nJ-tjA" firstAttribute="bottom" secondItem="cen-5V-FRA" secondAttribute="bottom" id="nEa-G1-hM5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F0M-nJ-tjA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nearby" id="TXr-dg-jvJ">
+                        <barButtonItem key="rightBarButtonItem" title="Zoom" id="3D9-iX-mLV">
+                            <connections>
+                                <action selector="resetZoomButtonPressed:" destination="6J2-bl-fTS" id="eEe-gA-nXG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="cen-5V-FRA" id="Cjh-mW-lQl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YgT-WL-xAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2741" y="-997"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="R2Z-OB-ApZ">
             <objects>
@@ -1466,7 +1510,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyL-G7-qLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.63768115942031" y="211.95652173913044"/>
+            <point key="canvasLocation" x="449" y="212"/>
         </scene>
         <!--Meal-->
         <scene sceneID="4kI-8U-ewt">

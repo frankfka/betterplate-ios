@@ -8,11 +8,16 @@
 
 import UIKit
 import Charts
+import SVProgressHUD
 
 class ViewHelperService {
     
-    // TODO just change this all to static
+    static func showErrorHUD(withMessage: String) {
+        SVProgressHUD.showError(withStatus: withMessage)
+        SVProgressHUD.dismiss(withDelay: 2)
+    }
     
+    // TODO just change this all to static
     // Allows no-scroll tableviews within a ViewController
     func updateTableviewSize(tableView: UITableView, tableViewHeightConstraint: NSLayoutConstraint) {
         tableView.isScrollEnabled = false

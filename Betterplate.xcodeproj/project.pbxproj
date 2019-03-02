@@ -35,6 +35,7 @@
 		118E1C5E21CA06E000B74C95 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */; };
 		11AEBC2121C8CB90003613CE /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */; };
 		11B16B5021DAF82900C044F4 /* BetterplateData.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B16B4F21DAF82900C044F4 /* BetterplateData.realm */; };
+		11D318C5222ACD33003F999C /* NearbyRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D318C4222ACD33003F999C /* NearbyRestaurantViewController.swift */; };
 		11DBA38B21CCB2D40031FB06 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBA38A21CCB2D40031FB06 /* FoodService.swift */; };
 		11DBA38D21CDDE210031FB06 /* ViewHelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBA38C21CDDE210031FB06 /* ViewHelperService.swift */; };
 		D12C278DFB9C5177C86682B1 /* Pods_Betterplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEA6AA1A83AB49295CE93FE /* Pods_Betterplate.framework */; };
@@ -71,6 +72,7 @@
 		118E1C5D21CA06E000B74C95 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		11AEBC2021C8CB90003613CE /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		11B16B4F21DAF82900C044F4 /* BetterplateData.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = BetterplateData.realm; sourceTree = "<group>"; };
+		11D318C4222ACD33003F999C /* NearbyRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyRestaurantViewController.swift; sourceTree = "<group>"; };
 		11DBA38A21CCB2D40031FB06 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
 		11DBA38C21CDDE210031FB06 /* ViewHelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelperService.swift; sourceTree = "<group>"; };
 		38899149A628C256E3C20E72 /* Pods-Betterplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Betterplate/Pods-Betterplate.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				1152C56A21C74EB9004A0205 /* MenusViewController.swift */,
 				1152C56C21C7515E004A0205 /* FoodsViewController.swift */,
 				1152C56E21C75333004A0205 /* FoodDetailViewController.swift */,
+				11D318C4222ACD33003F999C /* NearbyRestaurantViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				113E6E7221C62333008FC324 /* Restaurant.swift in Sources */,
 				1152DFE721CC950400963088 /* MenuService.swift in Sources */,
 				1152C56721C7418A004A0205 /* MealViewController.swift in Sources */,
+				11D318C5222ACD33003F999C /* NearbyRestaurantViewController.swift in Sources */,
 				1152C56F21C75333004A0205 /* FoodDetailViewController.swift in Sources */,
 				113E6E5E21C62095008FC324 /* HomeViewController.swift in Sources */,
 				1152DFE321CBEF4E00963088 /* RestaurantService.swift in Sources */,

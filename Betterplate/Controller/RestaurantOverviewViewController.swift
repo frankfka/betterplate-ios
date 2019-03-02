@@ -73,29 +73,6 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
         }
     }
     
-    //MARK: - Button methods & segues
-    @IBAction func favoriteBarButtonPressed(_ sender: UIBarButtonItem) {
-        updateIsFavorite(toggle: true)
-    }
-    
-    @IBAction func viewMenuButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "restaurantOverviewToMenusSegue", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "restaurantOverviewToMenusSegue" {
-            let destinationVC = segue.destination as! MenusViewController
-            destinationVC.parentRestuaurantId = parentRestuaurantId!
-        } else if segue.identifier == "healthyPicksToFoodDetailsSegue" {
-            let destinationVC = segue.destination as! FoodDetailViewController
-            destinationVC.foodId = pickedFoodItemId!
-        } else if segue.identifier == "advancedSearchToFoodsSegue" {
-            let destinationVC = segue.destination as! FoodsViewController
-            destinationVC.parentRestaurantId = parentRestuaurantId!
-            destinationVC.foodFilters = advancedSearchFilters!
-        }
-    }
-    
     //MARK: - Tableview methods
     // TODO should superclass food tableviews
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -228,5 +205,39 @@ extension RestaurantOverviewViewController: RangeSeekSliderDelegate {
         vegetarianSwitch.setOn(false, animated: true)
     }
     
+}
+
+// MARK: - Button Pressed & Segue Extension
+extension RestaurantOverviewViewController {
+    
+    //MARK: - Button methods & segues
+    @IBAction func favoriteBarButtonPressed(_ sender: UIBarButtonItem) {
+        updateIsFavorite(toggle: true)
+    }
+    
+    @IBAction func viewMenuButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "restaurantOverviewToMenusSegue", sender: self)
+    }
+    
+    @IBAction func nearbyButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "restaurantOverviewtoNearbySegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "restaurantOverviewToMenusSegue" {
+            let destinationVC = segue.destination as! MenusViewController
+            destinationVC.parentRestuaurantId = parentRestuaurantId!
+        } else if segue.identifier == "healthyPicksToFoodDetailsSegue" {
+            let destinationVC = segue.destination as! FoodDetailViewController
+            destinationVC.foodId = pickedFoodItemId!
+        } else if segue.identifier == "advancedSearchToFoodsSegue" {
+            let destinationVC = segue.destination as! FoodsViewController
+            destinationVC.parentRestaurantId = parentRestuaurantId!
+            destinationVC.foodFilters = advancedSearchFilters!
+        } else if segue.identifier == "restaurantOverviewtoNearbySegue" {
+            let destinationVC = segue.destination as! NearbyRestaurantViewController
+            destinationVC.restaurantName = restaurant?.restaurantName
+        }
+    }
     
 }
