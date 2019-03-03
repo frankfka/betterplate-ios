@@ -13,18 +13,21 @@ import UIKit
 let DEFAULT_LAT_SPAN = 0.1
 let DEFAULT_LONG_SPAN = 0.1
 
-class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegate {
+class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var restaurantName: String?
     var currentLocation: CLLocation?
+    // These are to bypass the bugs in MKLocalSearch
+    var hasAnnotations = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set delegate to this view controller
         locationManager.delegate = self
+        mapView.delegate = self
         
         // Determine authorization status
         switch CLLocationManager.authorizationStatus() {
@@ -48,11 +51,19 @@ class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegat
         updateViewToCurrentLocation()
     }
     
-    // MARK: Location delegate methods
+    // MARK: Location & map delegate methods
+    
+    // Function is called everytime location is updated
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.currentLocation = locations.last
+        // Keep trying to search if annotations are not present
+        if !hasAnnotations {
+            updateNearby()
+        }
     }
 
+    // Function is called when the authorization for location is changed
+    // This is initially called when user selects an authorization
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .restricted, .denied:
@@ -68,13 +79,63 @@ class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegat
         }
     }
     
+    // Function is called to get the popup annotation view for each map marker
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if (annotation is MKUserLocation) {
+            // User location, return nil to use default user location display
+            return nil
+        }
+        
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "marker")
+        let detailsButton = UIButton(type: .detailDisclosure)
+        annotationView.isEnabled = true
+        annotationView.canShowCallout = true
+        // This offsets the annotation so it appears above the marker
+        annotationView.calloutOffset = CGPoint(x: -5, y: 5)
+        // Set colors
+        let accentColor = UIColor(named: "accent")!
+        annotationView.markerTintColor = accentColor
+        detailsButton.tintColor = accentColor
+        annotationView.rightCalloutAccessoryView = detailsButton
+        
+        return annotationView
+    }
+    
+    // Function is called when the accessory button for the annotation is clicked
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let confirmationAlert = UIAlertController(title: "Launch in Maps", message: "This will open Apple Maps", preferredStyle: .alert)
+        // Launch apple maps option
+        confirmationAlert.addAction(UIAlertAction(title: "Open", style: .default, handler: { (action) in
+            // Create MKItems from the annotation
+            let place = MKPlacemark(coordinate: view.annotation!.coordinate)
+            let mapItem = MKMapItem(placemark: place)
+            // Get the annotation's title as the name or just display restaurant name
+            mapItem.name = view.annotation?.title ?? self.restaurantName
+            mapItem.openInMaps(launchOptions: [:])
+        }))
+        // Cancel action - do nothing
+        confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        // Present the alert
+        present(confirmationAlert, animated: true, completion: nil)
+    }
+    
     
     // MARK: Private methods for dealing with location
     
-    // Searches nearby and adds map annotations for the restaurant
+    // Searches nearby based on current map rect and adds map annotations for the restaurant
     private func updateNearby() {
+        
+        // Clear current annotations
+        mapView.removeAnnotations(mapView.annotations)
+        
         // Search if restaurant name exists (it should always)
-        if let restaurant = restaurantName {
+        if var restaurant = restaurantName {
+            // Hack to remove country codes from name
+            if restaurant.contains("(US)") || restaurant.contains("(CA)") {
+                restaurant.removeLast(5)
+            }
+            
             // Create search request
             let searchRequest = MKLocalSearch.Request()
             searchRequest.naturalLanguageQuery = restaurant
@@ -98,19 +159,23 @@ class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegat
                     
                     // Add annotations if locations found
                     if !itemsInRegion.isEmpty {
+                        self.hasAnnotations = true
                         for item in itemsInRegion {
                             let location = item.placemark
-                            print(location.title!)
+                            // Create annotation from the point info
                             let annotation = MKPointAnnotation()
                             annotation.coordinate = location.coordinate
+                            // Create title with restaurant name & neighbourhood if the info exists
+                            annotation.title = restaurant + (location.subLocality != nil ? " - " + location.subLocality! : "")
                             annotation.subtitle = location.title
                             self.mapView.addAnnotation(annotation)
                         }
-                    } else {
-                        print("No items found")
                     }
+                    // Unfortunately we can't let the user know that no results are found
+                    // Because search seems to always come up empty the first time
                 } else {
-                    print("Error in search")
+                    ViewHelperService.showErrorHUD(withMessage: "Something went wrong.")
+                    print("Error searching: \(error!)")
                 }
             }
         }
@@ -133,7 +198,6 @@ class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegat
         mapView.showsUserLocation = true
         // First zoom to user location
         updateViewToCurrentLocation()
-        updateNearby()
     }
     
     
