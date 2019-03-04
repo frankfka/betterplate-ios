@@ -12,14 +12,14 @@ import SVProgressHUD
 
 class ViewHelperService {
     
+    // Shows error with the given message
     static func showErrorHUD(withMessage: String) {
         SVProgressHUD.showError(withStatus: withMessage)
         SVProgressHUD.dismiss(withDelay: 2)
     }
     
-    // TODO just change this all to static
     // Allows no-scroll tableviews within a ViewController
-    func updateTableviewSize(tableView: UITableView, tableViewHeightConstraint: NSLayoutConstraint) {
+    static func updateTableviewSize(tableView: UITableView, tableViewHeightConstraint: NSLayoutConstraint) {
         tableView.isScrollEnabled = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
@@ -38,7 +38,7 @@ class ViewHelperService {
     }
     
     // Updates the size of the scrollview so that it fits all the content inside
-    func updateScrollViewSize(scrollView: UIScrollView, minHeight: CGFloat = CGFloat(integerLiteral: 0)) {
+    static func updateScrollViewSize(scrollView: UIScrollView, minHeight: CGFloat = CGFloat(integerLiteral: 0)) {
         var contentRect = CGRect.zero
         for view in scrollView.subviews {
             contentRect = contentRect.union(view.frame)
@@ -52,7 +52,7 @@ class ViewHelperService {
     
     // Initialize the nutritional pie chart, so that we have uniformity
     // in charts for current meal & individual menu items
-    func initializeNutritionPieChart(for pieChart: PieChartView, percentageProtein: Double, percentageCarbs: Double, percentageFat: Double) {
+    static func initializeNutritionPieChart(for pieChart: PieChartView, percentageProtein: Double, percentageCarbs: Double, percentageFat: Double) {
         
         // Data entries corresponding to the percentages
         let proteinDataEntry = PieChartDataEntry(value: percentageProtein, label: "Protein")

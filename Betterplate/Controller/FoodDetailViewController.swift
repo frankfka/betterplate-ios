@@ -16,7 +16,6 @@ class FoodDetailViewController: UIViewController {
     var foodId:Int?
     let mealService = CurrentMealService()
     let foodService = FoodService()
-    let viewService = ViewHelperService()
     
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var nutritionSummaryLabel: UILabel!
@@ -86,7 +85,7 @@ class FoodDetailViewController: UIViewController {
         pieChart.noDataText = "This item has no macronutrients."
         if food.calories >= 4 {
             let macros = foodService.getMacrosInPercent(for: [food])
-            viewService.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
+            ViewHelperService.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
         }
         // Else do nothing, Charts will display "No data available"
         

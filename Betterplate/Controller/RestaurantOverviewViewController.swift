@@ -41,8 +41,6 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
         super.viewDidLoad()
         if let restaurantId = parentRestuaurantId {
             
-            let viewHelper = ViewHelperService()
-            
             // Get Restaurants
             restaurant = realm.objects(Restaurant.self).filter("restaurantId == \(restaurantId)")[0]
             
@@ -57,10 +55,10 @@ class RestaurantOverviewViewController: UIViewController, UITableViewDelegate, U
             healthierPicksTable.dataSource = self
             healthierPicks = RestaurantService().getHealthierPicks(for: restaurant!)
             healthierPicksTable.register(UINib(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "foodCell")
-            viewHelper.updateTableviewSize(tableView: healthierPicksTable, tableViewHeightConstraint: healthierPicksTableHeightConstraint)
+            ViewHelperService.updateTableviewSize(tableView: healthierPicksTable, tableViewHeightConstraint: healthierPicksTableHeightConstraint)
             
             // Update scrollview size
-            viewHelper.updateScrollViewSize(scrollView: mainScrollView)
+            ViewHelperService.updateScrollViewSize(scrollView: mainScrollView)
             
             // Set up sliders with min & max values from the food list
             calSlider.delegate = self

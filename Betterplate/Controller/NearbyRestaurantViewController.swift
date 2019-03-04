@@ -94,9 +94,9 @@ class NearbyRestaurantViewController: UIViewController, CLLocationManagerDelegat
         // This offsets the annotation so it appears above the marker
         annotationView.calloutOffset = CGPoint(x: -5, y: 5)
         // Set colors
-        let accentColor = UIColor(named: "accent")!
-        annotationView.markerTintColor = accentColor
-        detailsButton.tintColor = accentColor
+        let primaryColor = UIColor(named: "primary")!
+        annotationView.markerTintColor = primaryColor
+        detailsButton.tintColor = primaryColor
         annotationView.rightCalloutAccessoryView = detailsButton
         
         return annotationView

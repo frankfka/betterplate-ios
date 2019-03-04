@@ -26,7 +26,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var favoriteRestaurants: [Restaurant] = []
     let mealService = CurrentMealService()
     let favoriteRestaurantService = FavoriteRestaurantService()
-    let viewHelper = ViewHelperService()
     
     override func viewDidLoad() {
         //homeToFoodSegue
@@ -69,10 +68,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         // Reinitialize constraints
-        viewHelper.updateTableviewSize(tableView: mealTable, tableViewHeightConstraint: mealTableHeight)
-        viewHelper.updateTableviewSize(tableView: favoriteRestaurantsTable, tableViewHeightConstraint: favoriteRestaurantsHeight)
+        ViewHelperService.updateTableviewSize(tableView: mealTable, tableViewHeightConstraint: mealTableHeight)
+        ViewHelperService.updateTableviewSize(tableView: favoriteRestaurantsTable, tableViewHeightConstraint: favoriteRestaurantsHeight)
         // TODO this doesnt work :(
-        viewHelper.updateScrollViewSize(scrollView: mainScrollView)
+        ViewHelperService.updateScrollViewSize(scrollView: mainScrollView)
     }
 
     // MARK: - Tableview methods

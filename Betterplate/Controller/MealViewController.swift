@@ -14,7 +14,6 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     var itemsInMeal: [Food] = []
     let mealService = CurrentMealService()
-    let viewHelper = ViewHelperService()
     let foodService = FoodService()
     @IBOutlet weak var emptyMealHelpLabel: UILabel!
     @IBOutlet weak var mainScrollView: UIScrollView!
@@ -106,8 +105,8 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Update tableview
         itemsInMeal = mealService.getFoodsInMeal()
         mealItemsTable.reloadData()
-        viewHelper.updateTableviewSize(tableView: mealItemsTable, tableViewHeightConstraint: mealItemsHeightConstraint)
-        viewHelper.updateScrollViewSize(scrollView: mainScrollView)
+        ViewHelperService.updateTableviewSize(tableView: mealItemsTable, tableViewHeightConstraint: mealItemsHeightConstraint)
+        ViewHelperService.updateScrollViewSize(scrollView: mainScrollView)
         
         // Edit button & help text
         if itemsInMeal.isEmpty {
@@ -151,7 +150,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         pieChart.noDataText = "Add items to your meal to see the macronutrient breakdown."
         if itemsInMeal.count > 0 {
             let macros = foodService.getMacrosInPercent(for: itemsInMeal)
-            viewHelper.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
+            ViewHelperService.initializeNutritionPieChart(for: pieChart, percentageProtein: macros[Macronutrient.PROTEIN]!, percentageCarbs: macros[Macronutrient.CARBS]!, percentageFat: macros[Macronutrient.FAT]!)
         } else {
             // Reset chart, Charts will display "No chart data available"
             pieChart.data = nil
